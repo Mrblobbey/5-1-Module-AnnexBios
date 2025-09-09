@@ -18,20 +18,19 @@
             <a href="contact.php">CONTACT</a>
         </ul>
     </nav>
-
     <div class="nav2">
-        <label for="film">koop je tickets:</label>
-        <select name="" required>
-            <option value="" disabled selected>kies je film</option>
-            <select name="film" id="film">
-            <option value="minions">minions</option>
-            <option value="jasper">jasper</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select>
-    </div>
-    <div class="">
-
-    </div>
+    <form action="/action_page.php" method="get">
+<label for="browser">Koop je tickets:</label>
+<input list="browsers" name="browser" id="browser" placeholder="Kies je film">
+ 
+      <datalist id="browsers">
+<option value="jasper">
+<option value="rody">
+<option value="minions">
+<option value="film">
+<option value="hendrik hogendijk">
+</datalist>
+</div>
 
 </header>
+

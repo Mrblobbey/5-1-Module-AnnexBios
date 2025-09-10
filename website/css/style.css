@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --vesting-color: #9E2629;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+.logo img{
+    height: 100px;
+    width: auto;
+    padding-left: 80px;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+
+}
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 80px;
+}
+ 
+.nav2 {
+    background-color: var(--vesting-color);
+    width: 100%;
+    padding:20px 0;
+}
+
+.nav2 form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 80px;
+}
+.nav2 button {
+    background-color:white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;
+font-family: 'lato', sans-serif;
+}
+
+.nav2 label {
+ font-family: 'lato', sans-serif;
+ font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav2 select {
+    padding: 5px;
+    border: none;
+    background-color: var(--vesting-color);
+    box-shadow: inset;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 180px;
+}
+

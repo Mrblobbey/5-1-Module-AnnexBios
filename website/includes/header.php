@@ -5,13 +5,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>annexbios</title>
 </head>
 <body>
     
 <header class="header">
         <div class="logo">
-        <img src="Photos/dummy_photo.png" alt="">
+        <img src="Photos/popcorn.svg" alt="">
+        <img src="Photos/filmroll_logo.svg" alt="">
         </div>
     <nav class="nav">
         <ul>
@@ -31,7 +32,7 @@
                 <option value="film">Film</option>
                 <option value="hendrik hogendijk">Hendrik Hogendijk</option>
             </select>
-            <button type="submit">Bestel tickets</button>
+            <button class="big-white-button" type="submit">Bestel tickets</button>
         </form>
     </div>
 </header>

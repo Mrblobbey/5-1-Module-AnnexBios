@@ -1,23 +1,29 @@
+/*  */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
     --vesting-color: #9E2629;
+    --footer-color: #666666;
+    --border-radius: 80px;
+    --basic-font: 'lato', sans-serif;
 }
 
 .header {
     background-color: white;
     display: flex;
+    min-height: 160px;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center; 
 }
 .logo img{
-    height: 100px;
+    height: 60px;
     width: auto;
-    padding-left: 80px;
+    padding-left: var(--border-radius);
 }
 
 .nav ul {
@@ -33,7 +39,7 @@
     color: black;
     font-weight: bold;
     text-transform: uppercase;
-    padding-right: 80px;
+    padding-right: var(--border-radius);
 }
  
 .nav2 {
@@ -46,8 +52,9 @@
     display: flex;
     gap: 30px;
     align-items: center;
-    padding-left: 80px;
+    padding-left: var(--border-radius);
 }
+
 .nav2 button {
     background-color:white;
     color: var(--vesting-color);
@@ -55,11 +62,11 @@
     padding: 5px 20px;
     cursor: pointer; 
     text-transform: uppercase;
-font-family: 'lato', sans-serif;
+    font-family: var(--basic-font);
 }
 
 .nav2 label {
- font-family: 'lato', sans-serif;
+ font-family: var(--basic-font);
  font-weight: 700;
     text-transform: uppercase;
     color: white;
@@ -74,4 +81,15 @@ font-family: 'lato', sans-serif;
     color: white;
     width: 180px;
 }
+
+.footer button {
+    background-color:white;
+    color: var(--footer-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+}
+
 

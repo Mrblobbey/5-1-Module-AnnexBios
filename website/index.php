@@ -29,22 +29,69 @@ include 'includes/header.php';
     <img src="img/film.png" alt="" class="img_film">
 </div>
 
+<div class="filmagenda"> 
+        <h2>FILMAGENDA</h2>
+    <div class="categorieen">
+        <img src="img/agenda.png" alt="" class="img_agenda">
+        <input type="radio" id="start" name="trip-start">FILMS
+        <input type="radio" id="start" name="trip-start">DEZE WEEK
+        <input type="radio" id="start" name="trip-start">VANDAAG
+        <input type="radio" id="start" name="trip-start" placeholder="Zoeken">
+
+            <select name="browser" id="browser">
+                <option value="" selected disabled>categorie</option>
+                <option value="jasper">Jasper</option>
+                <option value="rody">Rody</option>
+                <option value="minions">Minions</option>
+                <option value="film">Film</option>
+                <option value="hendrik hogendijk">Hendrik Hogendijk</option>
+            </select>
+    </div>
+</div>
 
 
+<div>
+    
+</div>
 
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-
-
-
-
-
-
-
-
-
-
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <?php
+$films = [
+    [
+        'titel' => 'Inception',
+        'beschrijving' => 'Een dief die dromen steelt krijgt een laatste kans op verlossing.',
+        'tijd' => '19:30',
+        'afbeelding' => 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg',
+    ],
+    [
+        'titel' => 'The Lion King',
+        'beschrijving' => 'Het verhaal van Simba, de leeuwenkoning.',
+        'tijd' => '17:00',
+        'afbeelding' => 'https://play-lh.googleusercontent.com/E4YJiRnNiYlM-PbjVrE2Zdr2d73SWbBTzarMIurgNNdr6c_Bh9IX05-ba6vdNR822EyG',
+    ],
+    [
+        'titel' => 'Avengers: Endgame',
+        'beschrijving' => 'De Avengers nemen het op tegen Thanos in een episch slotstuk.',
+        'tijd' => '21:00',
+        'afbeelding' => 'https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg',
+    ],
+];
+?>
+<div class="film_container">
+    <?php foreach ($films as $film): ?>
+        <div class="film_card">
+            <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" class="film_afbeelding">
+            <h3><?php echo $film['titel']; ?></h3>
+            <p><?php echo $film['beschrijving']; ?></p>
+            <p>Tijd: <?php echo $film['tijd']; ?></p>
+            <button class="button">Koop Tickets</button>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="button">
+    <a href="filmagenda.php">BEKIJK ALLE FILMS</a>
+    </div>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <?php
 include 'includes/footer.php';
 ?>

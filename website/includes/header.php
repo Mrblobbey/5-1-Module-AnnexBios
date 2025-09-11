@@ -13,6 +13,9 @@
         <div class="logo">
         <img src="Photos/popcorn.svg" alt="">
         <img src="Photos/filmroll_logo.svg" alt="">
+            <meta name="description" content="vul hier info in over de website zodat hij makkelijk te vinden is" />
+            <h1>AnnexBios in Maarssen | Bioscoop in Maarssen</h1>
+
         </div>
     <nav class="nav">
         <ul>

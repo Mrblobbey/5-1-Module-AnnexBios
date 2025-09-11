@@ -24,7 +24,7 @@ LEES MEER
 
 <footer class="main-footer">
     <div class="footer-container">
-    <img src="Photos/footer_logo.svg" alt="">2
+    <img src="Photos/footer_logo.svg" alt="">
         <div class="footer-content">
             
             <div class="footer-about">

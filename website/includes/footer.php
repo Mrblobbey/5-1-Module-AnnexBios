@@ -8,17 +8,30 @@
 <button class="button">
 LEES MEER
 </button>
+
+<h2> NAVIGEER</h2>
+<p><a href="#">Werken bij</a>
+   <a href="#">Veelgestelde vragen</a>
+   <a href="#">Vestegingen</a>
+   <a href="#">Contact</a></p><br>
+
+<h2> VOLG ONS</h2>
+
 </div>
 
 
 
+<div class="footer2">
 
-<footer class="footer2">
-    <p>&copy; 2024 Module Annex Bios</p>
+</div>
+
+<footer class="footer_kleur">
+    <p>&copy; 
+        <a href="#">Voorwaarden</a>
+        <a href="#">Privacy beleid</a>
+        <a href="#">Cookie disclaimer</a>
+    </p>
 </footer>
-
-
-
 
 
 </body>

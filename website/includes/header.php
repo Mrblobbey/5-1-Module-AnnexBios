@@ -31,7 +31,7 @@
 <option value="hendrik hogendijk">
 </datalist>
 
-    <button>Zoek</button>
+    <button class="button">Bestel tickets</button>
 </div>
 
 </header>

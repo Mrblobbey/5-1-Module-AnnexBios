@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annex Bios</title>
+    <title>annexbios</title>
 </head>
 <body>
     
@@ -32,7 +32,7 @@
                 <option value="film">Film</option>
                 <option value="hendrik hogendijk">Hendrik Hogendijk</option>
             </select>
-            <button type="submit">Bestel tickets</button>
+            <button class="big-white-button" type="submit">Bestel tickets</button>
         </form>
     </div>
 </header>

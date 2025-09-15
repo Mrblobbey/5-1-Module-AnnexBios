@@ -1,5 +1,6 @@
 <?php
 include 'includes/header.php';
+include 'includes/film_array.php';
 ?>
 <br> <br> <br> <br> 
 
@@ -55,28 +56,7 @@ include 'includes/header.php';
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-<?php
-$films = [
-    [
-        'titel' => 'Inception',
-        'beschrijving' => 'Een dief die dromen steelt krijgt een laatste kans op verlossing.',
-        'tijd' => '19:30',
-        'afbeelding' => 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg',
-    ],
-    [
-        'titel' => 'The Lion King',
-        'beschrijving' => 'Het verhaal van Simba, de leeuwenkoning.',
-        'tijd' => '17:00',
-        'afbeelding' => 'https://play-lh.googleusercontent.com/E4YJiRnNiYlM-PbjVrE2Zdr2d73SWbBTzarMIurgNNdr6c_Bh9IX05-ba6vdNR822EyG',
-    ],
-    [
-        'titel' => 'Avengers: Endgame',
-        'beschrijving' => 'De Avengers nemen het op tegen Thanos in een episch slotstuk.',
-        'tijd' => '21:00',
-        'afbeelding' => 'https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg',
-    ],
-];
-?>
+
 <div class="film_container">
     <?php foreach ($films as $film): ?>
         <div class="film_card">
@@ -84,10 +64,12 @@ $films = [
             <h3><?php echo $film['titel']; ?></h3>
             <p><?php echo $film['beschrijving']; ?></p>
             <p>Tijd: <?php echo $film['tijd']; ?></p>
-            <button class="button">Koop Tickets</button>
-        </div>
+            <div class="button">
+            <a href="filmagenda.php">MEER INFO EN TICKETS</a>
+            </div>
+        </div><br>
         <?php endforeach; ?>
-    </div>
+    </div><br>
     <div class="button">
     <a href="filmagenda.php">BEKIJK ALLE FILMS</a>
     </div>

@@ -16,3 +16,5 @@ include '../includes/header.php';
 // Content of the page
 include '../includes/footer.php';
 ?>
+</body>
+</html>

@@ -39,3 +39,5 @@ include '../includes/film_array.php';
 <?php
 include '../includes/footer.php';
 ?>
+</body>
+</html>

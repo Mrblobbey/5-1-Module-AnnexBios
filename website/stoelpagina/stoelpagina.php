@@ -1,6 +1,14 @@
-<?php
-include 'includes/header.php';
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>annexbios</title>
+</head>
+<body>
+    
 
 <div class="background">
     <div class="koptekst">TICKETS BESTELLEN</div>
@@ -50,6 +58,10 @@ include 'includes/header.php';
         <button type="button">TOEVOEGEN</button>
     </div>
     <br>
+    <div class="mini-filminfo">
+        <p>Film: JURASSIC WORLD | Zaal 3 | 12 september 2025 | 20:00</p>
+    </div>
+    <br>
     <div class="stap">
         <h2>STAP 2: KIES JE STOEL</h2>
         <div class="stoelen">
@@ -85,7 +97,9 @@ include 'includes/header.php';
     <div class="stap">
         <h2>STAP 3: CONTROLEER JE BESTELLING</h2>
         <div class="bestelling">
-            <!-- Bestelling info hier -->
+            <p>Film: JURASSIC WORLD</p>
+            <p>Zaal 3</p>
+
         </div>
     </div>
     <br>
@@ -109,3 +123,5 @@ include 'includes/header.php';
     <br>
     <button class="afrekenen">AFREKENEN</button>
 </div>
+
+<?php include '../includes/footer.php'; ?>

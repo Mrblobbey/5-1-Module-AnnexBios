@@ -3,14 +3,39 @@
     padding: 0;
 }
 
+/* makkelijke variabelen */
 :root {
     --vesting-color: #9E2629;
     --footer-color: #666666;
     --basic-font: 'lato', sans-serif;
     --border-radius: 80px;
-
 }
 
+
+/* achtergrond */
+body {
+    background-image: url("../Photos/header_afbeelding.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: cover;
+}
+.background {
+    min-height: 200%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+    position: absolute;
+}
+.container {
+    z-index: 2;
+    position: absolute;
+}
+/* einde achtergrond*/
+
+/* header */
 .header {
     background-color: white;
     min-height: 190px;
@@ -19,19 +44,64 @@
     flex-wrap: wrap;
     align-items: center; 
 }
-.logo img{
-    height: 60px;
-    width: auto;
+.logo {
+    display: flex;
+    align-items: flex-end;
     padding-left: var(--border-radius);
+    position: relative;
+    padding-bottom: 5px; 
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Ensure text color is inherited */
+
 }
 
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: var(--basic-font);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--vesting-color);
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    display: inline;
+    text-decoration: none; 
+}
+
+#popcorn-img {
+    height: 50px;
+    width: auto;
+    vertical-align: bottom; 
+    display: inline-block;
+}
+
+#filmroll-img {
+    position: absolute;
+    bottom: -22px; 
+    left: 195px;
+    width: 150px; 
+    height: auto;
+    z-index: 1;
+    margin: 0;
+    display: block;
+    transform: scale(0.31); 
+    transform-origin: left center;
+    pointer-events: none;
+}
 .nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 20px;
-
 }
 .nav a {
     text-decoration: none;
@@ -79,7 +149,42 @@
     color: white;
     width: 180px;
 }
+/* einde header */
 
+.welkom {
+background-color: var(--vesting-color);
+color: white;
+font-family: var(--basic-font);
+}
+.welkom h2 {
+    font-weight: 100;
+    font-size: 2rem;
+}
+.welkom p {
+    font-weight: 100;
+    font-size: 1rem;
+}
+.welkom a {
+    background-color:white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+    text-decoration: none;
+    display: inline-block;  
+}
+
+
+
+
+
+
+
+
+
+/* footer */
 .main-footer {
     background-color: var(--footer-color);
     color: white;
@@ -130,7 +235,6 @@
     min-width: 200px;
 }
 
-.footer-nav h3,
 .footer-social h3 {
     color: white;
     margin-bottom: 15px;
@@ -216,5 +320,4 @@
     text-decoration: none;
 }
 
-
-    
+/* einde footer */

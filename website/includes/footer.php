@@ -1,4 +1,14 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="footer">
+<p> Lorem ipsum dolor sit amet, consectetuer<br> 
+    adipiscing elit. Aenean commodo ligula eget <br>
+    dolor. Aenean massa. Cum sociis natoque <br>
+    penatibus et magnis dis parturient montes,<br>
+    nascetur ridiculus mus. Donec quam felis,
+</p>
+<button class="button">
+LEES MEER
+</button>
 
 <footer class="main-footer">
     <div class="footer-container">
@@ -50,6 +60,3 @@
         </div>
     </div>
 </footer>
-</div>
-</body>
-</html>

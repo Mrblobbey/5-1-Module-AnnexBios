@@ -4,14 +4,9 @@ include 'includes/header.php';
 <br> <br> <br> <br> 
 
 <div class="welkom">
-<h2> WELKOM BIJ ANNEXBIOS 2</h2>
-<p> Lorem ipsum dolor sit amet, consectetuer<br> 
-    adipiscing elit.</p>
-</div>
-
-<div class="button_welkom">
-
-<a href="films.php">BEKIJK DE DRAAIENDE FILMS</a>
+    <h2>WELKOM BIJ ANNEXBIOS</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <a href="films.php">BEKIJK DE DRAAIENDE FILMS</a>
 </div>
 
 <div class="info">

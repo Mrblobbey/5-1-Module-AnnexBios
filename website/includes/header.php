@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AnnexBios bioscoop in Maarssen - Bekijk onze filmagenda, koop tickets online en ontdek al onze vestigingen.">
-    <title>AnnexBios | Bioscoop in Maarssen</title>
-</head>
 <body>
     <div class="background">
     </div>

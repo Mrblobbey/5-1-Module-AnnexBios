@@ -12,6 +12,13 @@
 include '../includes/header.php';
 include '../includes/film_array.php';
 ?>
+<br> <br> <br> <br>
+
+<div class="filminfo_h2">
+    <h2>
+        JURASSIC WORLD: FALLEN KINGDOM
+    </h2>
+</div>
 
 <div class="film_container">
     <?php foreach ($films as $film): ?>
@@ -21,10 +28,10 @@ include '../includes/film_array.php';
             <p><?php echo $film['beschrijving']; ?></p>
             <p>Tijd: <?php echo $film['tijd']; ?></p>
             <div class="button">
-            <a href="filmagenda.php">MEER INFO EN TICKETS</a>
+            <a href="stoelenpagina.php">MEER INFO EN TICKETS</a>
             </div>
         </div><br>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
 </div><br>
     <div class="button">
     <a href="filmagenda.php">BEKIJK ALLE FILMS</a>

@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* makkelijke variabelen */
+:root {
+    --vesting-color: #9E2629;
+    --footer-color: #666666;
+    --basic-font: 'lato', sans-serif;
+    --border-radius: 80px;
+}
+
+
+/* header */
+.header {
+    background-color: white;
+    min-height: 190px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+.logo {
+    display: flex;
+    align-items: flex-end;
+    padding-left: var(--border-radius);
+    position: relative;
+    padding-bottom: 5px; 
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Ensure text color is inherited */
+
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: var(--basic-font);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--vesting-color);
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    display: inline;
+    text-decoration: none; 
+}
+
+#popcorn-img {
+    height: 50px;
+    width: auto;
+    vertical-align: bottom; 
+    display: inline-block;
+}
+
+#filmroll-img {
+    position: absolute;
+    bottom: -22px; 
+    left: 195px;
+    width: 150px; 
+    height: auto;
+    z-index: 1;
+    margin: 0;
+    display: block;
+    transform: scale(0.31); 
+    transform-origin: left center;
+    pointer-events: none;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 80px;
+}
+ 
+.nav2 {
+    background-color: var(--vesting-color);
+    width: 100%;
+    padding:20px 0;
+    
+}
+
+.nav2 form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 80px;
+}
+.nav2 button {
+    background-color:white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+}
+
+.nav2 label {
+ font-family: 'lato', sans-serif;
+ font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav2 select {
+    padding: 5px;
+    border: none;
+    background-color: var(--vesting-color);
+    box-shadow: inset;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 180px;
+}
+/* einde header */
+
+/* ...bestaande code... */
+
+/* Algemene body styling */
+body {
+    background: #111;
+    font-family: var(--basic-font);
+    min-height: 100vh;
+}
+
+/* Content container gecentreerd */
+.background {
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    padding: 30px 30px 0 30px;
+}
+
+/* Koptekst */
+.koptekst {
+    font-family: var(--basic-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--vesting-color);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Dropdown rij */
+.dropdown-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.styled-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+/* Stappen */
+.stap {
+    background: #fff;
+    border-radius: 0;
+    margin-bottom: 30px;
+    padding: 0 0 20px 0;
+}
+
+.stap h2 {
+    font-size: 1rem;
+    color: var(--vesting-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: var(--basic-font);
+}
+
+/* Tabel styling */
+.stap table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.stap th, .stap td {
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.stap th {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.stap td {
+    border-bottom: 1px solid #eee;
+}
+
+.stap input[type="number"] {
+    width: 50px;
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+/* Vouchercode */
+.stap input[type="text"] {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-right: 8px;
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+
+.stap button[type="button"] {
+    background: var(--vesting-color);
+    color: #fff;
+    border: none;
+    padding: 5px 18px;
+    border-radius: 2px;
+    font-family: var(--basic-font);
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* Mini filminfo */
+.mini-filminfo {
+    background: #f8f8f8;
+    border-left: 4px solid var(--vesting-color);
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Stoelen layout */
+.stoelen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stoelen > div:first-child {
+    color: var(--vesting-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--vesting-color);
+    width: 60%;
+    text-align: center;
+    padding-bottom: 2px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.stoel-rij {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.stoel {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.stoel input[type="checkbox"] {
+    display: none;
+}
+
+.stoel span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: #e57373;
+    border-radius: 4px;
+    border: 1.5px solid #b71c1c;
+    margin: 0;
+    vertical-align: middle;
+    transition: background 0.2s;
+}
+
+.stoel input[type="checkbox"]:checked + span {
+    background: #9E2629;
+    border-color: #9E2629;
+}
+
+.stoel.rolstoel span {
+    background: #bdbdbd;
+    border: 1.5px solid #616161;
+    position: relative;
+}
+.stoel.rolstoel span::after {
+    content: "♿";
+    color: #333;
+    font-size: 1rem;
+    position: absolute;
+    left: 2px;
+    top: 0;
+}
+
+/* Stoel legenda */
+.stap > div > button {
+    margin-right: 10px;
+    background: #e57373;
+    color: #fff;
+    border: none;
+    padding: 5px 18px;
+    border-radius: 2px;
+    font-family: var(--basic-font);
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+.stap > div > button:nth-child(2) {
+    background: #bdbdbd;
+    color: #333;
+}
+.stap > div > button:nth-child(3) {
+    background: #9E2629;
+    color: #fff;
+}
+
+/* Bestelling */
+.bestelling {
+    background: #fff;
+    border: 2px solid #9E2629;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Gegevens invullen */
+.stap input[type="text"], .stap input[type="email"] {
+    display: block;
+    width: 48%;
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 0.95rem;
+}
+
+.stap input[type="text"]:nth-child(2) {
+    float: right;
+}
+
+/* Betaalwijzen */
+.betaalwijzen {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+/* Algemene voorwaarden */
+.stap label {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 8px;
+    display: block;
+}
+
+/* Afrekenen knop onderaan */
+.afrekenen {
+    width: 100%;
+    background: var(--vesting-color);
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: var(--basic-font);
+    font-weight: 700;
+    border: none;
+    padding: 18px 0;
+    margin: 0;
+    border-radius: 0;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.10);
+    transition: background 0.2s;
+}
+
+.afrekenen:hover {
+    background: #b71c1c;
+}
+/* einde body content */
+
+
+
+/* footer */
+.main-footer {
+    background-color: var(--footer-color);
+    color: white;
+    font-family: var(--basic-font);
+    margin-top: 50px;
+}
+
+.footer-container {
+    padding: 40px 0px 40px var(--border-radius);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-about {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--footer-color);
+    text-decoration: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+    font-weight: bold;
+}
+
+.footer-button:hover {
+    opacity: 0.8;
+}
+
+.footer-nav {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-social h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-social {
+    flex: 1;
+    min-width: 150px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-decoration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 200px;
+}
+
+.footer-decoration img {
+    width: 200px;
+    height: auto;
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.footer-bottom {
+    background-color: black ;
+    padding: 20px var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* einde footer */
+
+/* Responsive voor laptop schermen */
+@media (max-width: 1100px) {
+    .background {
+        max-width: 98vw;
+        padding: 18px 2vw 0 2vw;
+    }
+    .stap input[type="text"], .stap input[type="email"] {
+        width: 100%;
+    }
+    .stoelen > div:first-child {
+        width: 90%;
+    }
+}

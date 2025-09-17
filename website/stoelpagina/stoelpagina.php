@@ -11,7 +11,7 @@
 
 <body>
     
-<div class="background">
+<div class="backgroundform"></div>
     <div class="koptekst">TICKETS BESTELLEN</div>
     <br><br>
     <div class="dropdown-row">

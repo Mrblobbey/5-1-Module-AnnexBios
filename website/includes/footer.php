@@ -1,15 +1,3 @@
-
-<div class="footer">
-<p> Lorem ipsum dolor sit amet, consectetuer<br> 
-    adipiscing elit. Aenean commodo ligula eget <br>
-    dolor. Aenean massa. Cum sociis natoque <br>
-    penatibus et magnis dis parturient montes,<br>
-    nascetur ridiculus mus. Donec quam felis,
-</p>
-<button class="button">
-LEES MEER
-</button>
-
 <footer class="main-footer">
     <div class="footer-container">
     <img src="Photos/footer_logo.svg" alt="">
@@ -60,4 +48,3 @@ LEES MEER
         </div>
     </div>
 </footer>
-</div>

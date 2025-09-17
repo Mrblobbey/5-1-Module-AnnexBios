@@ -1,24 +1,23 @@
-<body>
-    <div class="background">
-    </div>
-    <div class="container">
-        <header class="header">
-            <a href="index.php" class="logo">
-                <img id="popcorn-img" src="Photos/popcorn.svg" alt="popcorn">
+<div class="header-container">
+        <header class="header" role="banner">
+            <a href="index.php" class="logo" aria-label="AnnexBios Home">
+                <img id="popcorn-img" src="Photos/popcorn.svg" alt="" aria-hidden="true">
                 <div class="logo-content">
                     <h1>AnnexBios | Maarssen</h1>
                 </div>
-                <img id="filmroll-img" src="Photos/filmroll_logo.svg" alt="">
+                <img id="filmroll-img" src="Photos/filmroll_logo.svg" alt="" aria-hidden="true">
             </a>
-            <nav class="nav">
+            
+            <nav class="main-nav" aria-label="Hoofdnavigatie">
                 <ul>
-                    <li><a href="filmagenda.php">film agenda</a></li>
-                    <li><a href="allevestingen.php">ALLE VESTINGEN</a></li>
-                    <li><a href="contact.php">CONTACT</a></li>
+                    <li><a href="filmagenda.php">Film agenda</a></li>
+                    <li><a href="allevestingen.php">Alle vestigingen</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
+            
             <div class="nav2">
-                <form action="/action_page.php" method="get">
+                <form action="action_page.php" method="get">
                     <label for="browser">Koop je tickets</label>
                     <select name="browser" id="browser" placeholder="Kies je film">
                         <option value="" selected disabled>Kies je film</option>

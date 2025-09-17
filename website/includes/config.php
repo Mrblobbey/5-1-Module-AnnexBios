@@ -1,8 +1,11 @@
 <?php
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
+$dotenv->load();
 
 // connectie met de api 
-$gluApiKey = 'https://u240066.gluwebsite.nl'; // de api bron 
-$gluApikey  = 'RzQPNjAVYzZRZspZsXrDjhsjFzG69KogrHB8Pkew'; // de key 
+$gluApiUrl = $_ENV['GLU_API_URL']; // de api bron 
+$gluApikey = $_ENV['GLU_API_KEY']; // de key 
+
 ?>

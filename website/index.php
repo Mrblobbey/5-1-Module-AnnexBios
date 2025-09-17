@@ -1,3 +1,38 @@
+<?php
+require './includes/config.php';
+
+//  hier start hij de api aanvraag 
+$ch = curl_init($gluApiUrl . "/api/movies");
+
+// hier zet hij de api key in de http headers 
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "X-API-KEY: " . $gluApikey,
+    "Content-Type: application/json"
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+// hier kijk of de api goed aangevraagd is
+$response = curl_exec($ch);
+
+// hier checkt hij of er een error is anders stopt hij de code 
+if(curl_errno($ch)){
+    exit("Er is een fout opgetreden met de api.");
+}
+// hier maakt hij de terugkoppeling van de aanvraag in jason 
+$movieData = json_decode($response, true);
+
+// hier checkt hij de database error en stopt de code bij error 
+if($movieData['status'] !== 'success'){
+    exit("Er is een fout opgetreden met de api.");
+}
+// hier pakt hij de film data als alles goed is 
+$films = $movieData['data'];
+
+// hier sluit hij de api aanvraag 
+curl_close($ch);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +47,7 @@
     <div class="container">
     <?php
     require_once 'includes/header.php';
-    require_once 'includes/film_array.php';
+    // require_once 'includes/film_array.php';
     ?>
     <main>
         <section class="welkom">
@@ -59,9 +94,9 @@
     </section>
                 
     <section class="filmagenda">
-  <h2>FILM AGENDA</h2>
+        <h2>FILM AGENDA</h2>
 
-  <div class="filters">
+        <div class="filters">
     <!-- icon button -->
     <button class="icon-btn">
       <img src="img/agenda.png" alt="Agenda icoon">
@@ -72,25 +107,26 @@
     <button>DEZE WEEK</button>
     <button>VANDAAG</button>
 
-    <!-- dropdown -->
-    <select>
-      <option value="" selected disabled>CATEGORIE</option>
-      <option value="all">Alle films</option>
-      <option value="new">Nieuwe films</option>
-      <option value="soon">Binnenkort</option>
-    </select>
-  </div>
-</section>
+      <!-- dropdown -->
+        <select>
+            <option value="" selected disabled>CATEGORIE</option>
+            <option value="all">Alle films</option>
+            <option value="new">Nieuwe films</option>
+            <option value="soon">Binnenkort</option>
+        </select>
+        </div>
+    </section>
 
 <div class="film_container">
     <?php foreach ($films as $film): ?>
         <div class="film_card">
-            <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" class="film_afbeelding">
-            <h3><?php echo $film['titel']; ?></h3>
-            <p><?php echo $film['beschrijving']; ?></p>
-            <p>Tijd: <?php echo $film['tijd']; ?></p>
+            <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>" alt="<?php echo $film['movie']['title']; ?>" class="film_afbeelding">
+            <h3><?php echo $film['movie']['title']; ?></h3>
+            <p><?php echo $film['movie']['overview']; ?></p>
+            <p>Tijd: <?php echo $film['start_time']; ?></p>
+            <p>Rating: <?php echo $film['movie']['vote_average']; ?></p>
             <div class="button">
-            <a href="filmagenda.php">MEER INFO EN TICKETS</a>
+            <a href="filmagenda.php?id=<?php echo $film['id'] ?>">MEER INFO EN TICKETS</a>
             </div>
         </div><br>
         <?php endforeach; ?>

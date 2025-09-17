@@ -59,9 +59,9 @@
     </section>
                 
     <section class="filmagenda">
-  <h2>FILM AGENDA</h2>
+        <h2>FILM AGENDA</h2>
 
-  <div class="filters">
+        <div class="filters">
     <!-- icon button -->
     <button class="icon-btn">
       <img src="img/agenda.png" alt="Agenda icoon">
@@ -72,15 +72,15 @@
     <button>DEZE WEEK</button>
     <button>VANDAAG</button>
 
-    <!-- dropdown -->
-    <select>
-      <option value="" selected disabled>CATEGORIE</option>
-      <option value="all">Alle films</option>
-      <option value="new">Nieuwe films</option>
-      <option value="soon">Binnenkort</option>
-    </select>
-  </div>
-</section>
+      <!-- dropdown -->
+        <select>
+            <option value="" selected disabled>CATEGORIE</option>
+            <option value="all">Alle films</option>
+            <option value="new">Nieuwe films</option>
+            <option value="soon">Binnenkort</option>
+        </select>
+        </div>
+    </section>
 
 <div class="film_container">
     <?php foreach ($films as $film): ?>

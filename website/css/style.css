@@ -26,11 +26,11 @@ body {
     width: 100%;
     background-color: black;
     opacity: 0.8;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
 }
 .container {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
 }
 /* einde achtergrond*/
@@ -71,7 +71,7 @@ body {
     line-height: 1;
     white-space: nowrap;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: inline;
     text-decoration: none; 
 }
@@ -89,21 +89,21 @@ body {
     left: 195px;
     width: 150px; 
     height: auto;
-    z-index: 1;
+    z-index: 3;
     margin: 0;
     display: block;
     transform: scale(0.31); 
     transform-origin: left center;
     pointer-events: none;
 }
-.nav ul {
+.main-nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 20px;
 }
-.nav a {
+.main-nav a {
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -114,7 +114,8 @@ body {
 .nav2 {
     background-color: var(--vesting-color);
     width: 100%;
-    padding:20px 0;
+    padding: 20px 0;
+    margin-top: auto;
 }
 
 .nav2 form {
@@ -151,10 +152,21 @@ body {
 }
 /* einde header */
 
+
+.inhoud-container {
+    max-width: 1400px;   /* max breedte content */
+    margin: 0 80px;      /* 80px afstand links en rechts */
+}
+/* einde inhoud container */
+
+/* begin welkom */
 .welkom {
-background-color: var(--vesting-color);
-color: white;
-font-family: var(--basic-font);
+    background-color: var(--vesting-color);
+    color: white;
+    font-family: var(--basic-font);
+    padding: 40px 0;
+    width: 100%;
+    margin: 40px var(--border-radius);
 }
 .welkom h2 {
     font-weight: 100;
@@ -165,19 +177,117 @@ font-family: var(--basic-font);
     font-size: 1rem;
 }
 .welkom a {
-    background-color:white;
+    background-color: white;
     color: var(--vesting-color);
     border: none;
-    padding: 5px 20px;
-    cursor: pointer; 
+    padding: 12px 24px;
+    cursor: pointer;
     text-transform: uppercase;
     font-family: var(--basic-font);
     text-decoration: none;
-    display: inline-block;  
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+/* einde welkom */
+
+/* Location Section */
+.location-section {
+    padding: 60px 0;
+    background-color: white;
+    width: 100%;
 }
 
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
 
+.map-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
+.contact-info {
+    padding: 20px;
+}
+
+.contact-info h2 {
+    color: var(--vesting-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.address-info {
+    margin-bottom: 30px;
+    font-style: normal;
+}
+
+.address-line {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+/* einde location section */
+
+/* begin filmagenda */
+.filmagenda {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-bottom: 2px solid #000;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+  
+.filmagenda h2 {
+    color: #991b1b;
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+}
+  
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: white;
+    padding: 20px;
+    
+}
+
+/* einde filmagenda */
+
+/*begin filmcontainer*/
+.filmcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.film_card {
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--vesting-color);
+    color: white;
+    text-transform: none;
+}
 
 
 
@@ -193,7 +303,7 @@ font-family: var(--basic-font);
 }
 
 .footer-container {
-    padding: 40px 0px 40px var(--border-radius);
+    padding: 40px
 }
 
 .footer-content {

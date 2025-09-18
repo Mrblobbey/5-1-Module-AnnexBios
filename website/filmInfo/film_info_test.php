@@ -1,3 +1,13 @@
+<?php
+include '../includes/film_array.php';
+        
+        // check of er een id is meegegeven
+        if (isset($_GET['id']) && isset($films[$_GET['id']])) {
+            $film = $films[$_GET['id']];
+        } else {
+            die("Film niet gevonden!");
+        }
+            ?>
 
 
 <!DOCTYPE html>
@@ -11,7 +21,6 @@
     </head>
     <body>
         <?php
-            include '../includes/film_array.php';
             include '../includes/header.php';
             ?>
 <br> <br> <br> <br>
@@ -24,21 +33,10 @@
 
 <div class="film_container">
     
-    <?php foreach ($films as $film): ?>
-    <div class="film_card">
-            <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" class="film_afbeelding">
-            <h3><?php echo $film['titel']; ?></h3>
-            <p><?php echo $film['beschrijving']; ?></p>
-            <p>Tijd: <?php echo $film['tijd']; ?></p>
-            <div class="button">
-            <a href="stoelenpagina.php">MEER INFO EN TICKETS</a>
-            </div>
-        </div><br>
-    <?php endforeach; ?>
     
     </div><br>
     <div class="button">
-        <a href="filmagenda.php">BEKIJK ALLE FILMS</a>
+        <a href="filmAgenda/filmagenda.php">BEKIJK ALLE FILMS</a>
     </div>
     
     
@@ -71,15 +69,6 @@ include '../includes/footer.php';
 
 
 
-<!-- <?php
-
-// check of er een id is meegegeven
-if (isset($_GET['id']) && isset($films[$_GET['id']])) {
-    $film = $films[$_GET['id']];
-} else {
-    die("Film niet gevonden!");
-}
-?> -->
 
 
 
@@ -95,3 +84,15 @@ foreach ($films as $index => $film) {
 
 
 
+
+<!-- <?php foreach ($films as $film): ?>
+<div class="film_card">
+        <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" class="film_afbeelding">
+        <h3><?php echo $film['titel']; ?></h3>
+        <p><?php echo $film['beschrijving']; ?></p>
+        <p>Tijd: <?php echo $film['tijd']; ?></p>
+        <div class="button">
+        <a href="stoelenpagina.php">MEER INFO EN TICKETS</a>
+        </div>
+    </div><br>
+<?php endforeach; ?> -->

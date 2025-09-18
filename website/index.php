@@ -43,6 +43,16 @@ curl_close($ch);
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <?php
+
+        foreach ($films as $index => $film) {
+            echo "<h2>{$film['titel']}</h2>";
+            echo "<a href='details.php?id={$index}'>Bekijk details</a><br><br>";
+        }
+
+    ?>
+
     <div class="background"></div>
     <div class="container">
     <?php

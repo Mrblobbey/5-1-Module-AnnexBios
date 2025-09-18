@@ -11,8 +11,34 @@
 <div class="background"></div>
 <div class="container">
 <?php
-include '../includes/header.php';
-?>
+    require_once '../includes/header.php';
+    require_once '../includes/film_array.php';
+    ?>
+
+<section class="filmagenda">
+        <h2>FILM AGENDA</h2>
+
+        <div class="filters">
+    <!-- icon button -->
+    <button class="icon-btn">
+      <img src="../photos/agenda.png" alt="Agenda icoon">
+    </button>
+
+    <!-- regular buttons -->
+    <button>FILMS</button>
+    <button>DEZE WEEK</button>
+    <button>VANDAAG</button>
+
+      <!-- dropdown -->
+        <select>
+            <option value="" selected disabled>CATEGORIE</option>
+            <option value="all">Alle films</option>
+            <option value="new">Nieuwe films</option>
+            <option value="soon">Binnenkort</option>
+        </select>
+        </div>
+    </section>
+
 <div class="film_container">
     <?php foreach ($films as $film): ?>
         <div class="film_card">
@@ -29,11 +55,8 @@ include '../includes/header.php';
     </div>
     </section>
     </div>
-</div>
-</div>
+</main>
+<?php require_once '../includes/footer.php'; ?> 
 
-<?php
-include '../includes/footer.php';
-?>
 </body>
 </html>

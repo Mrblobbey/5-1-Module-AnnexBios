@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* makkelijke variabelen */
+:root {
+    --vesting-color: #9E2629;
+    --footer-color: #666666;
+    --basic-font: 'lato', sans-serif;
+    --border-radius: 80px;
+}
+
+/* achtergrond */
+body {
+    background-image: url("../photos/header_afbeelding.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: cover;
+    position: absolute;
+}
+.background {
+    min-height: 200%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 2;
+    position: absolute;
+}
+.container {
+    z-index: 3;
+    position: relative;
+}
+/* einde achtergrond*/
+
+/* header */
+.header {
+    background-color: white;
+    min-height: 190px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+.logo {
+    display: flex;
+    align-items: flex-end;
+    padding-left: var(--border-radius);
+    position: relative;
+    padding-bottom: 5px; 
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Ensure text color is inherited */
+
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: var(--basic-font);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--vesting-color);
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+    display: inline;
+    text-decoration: none; 
+}
+
+#popcorn-img {
+    height: 50px;
+    width: auto;
+    vertical-align: bottom; 
+    display: inline-block;
+}
+
+#filmroll-img {
+    position: absolute;
+    bottom: -22px; 
+    left: 195px;
+    width: 150px; 
+    height: auto;
+    z-index: 3;
+    margin: 0;
+    display: block;
+    transform: scale(0.31); 
+    transform-origin: left center;
+    pointer-events: none;
+}
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.main-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 80px;
+}
+ 
+.nav2 {
+    background-color: var(--vesting-color);
+    width: 100%;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.nav2 form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 80px;
+}
+.nav2 button {
+    background-color:white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+}
+
+.nav2 label {
+ font-family: 'lato', sans-serif;
+ font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav2 select {
+    padding: 5px;
+    border: none;
+    background-color: var(--vesting-color);
+    box-shadow: inset;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 180px;
+}
+/* einde header */
+/* begin filmagenda */
+.filmagenda {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 20px var(--border-radius);
+}
+  
+.filmagenda h2 {
+    color: #991b1b;
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+}
+  
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: white;
+    padding: 20px;
+    
+}
+
+/* einde filmagenda */
+
+
+/*begin filmcontainer*/
+.film_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px var(--border-radius);
+}
+
+.film_card {
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.film_afbeelding {
+    width: 100%;
+    height: 350px;           
+    object-fit: cover;       
+}
+.film_card h3 {
+    font-size: 1.1rem;
+    margin: 10px 15px 5px;
+    color: #222;
+}
+
+.film_card p {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0 15px 10px;
+    flex-grow: 1;
+}
+
+.button {
+    margin-top: auto; 
+    text-align: center;
+}
+
+.button a {
+    display: block;
+    padding: 12px 20px; 
+    margin: 0 10px 10px; 
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    background-color: var(--vesting-color);
+}
+/* einde filmcontainer */
+/* footer */
+.main-footer {
+    background-color: var(--footer-color);
+    color: white;
+    font-family: var(--basic-font);
+    margin-top: 50px;
+}
+
+.footer-container {
+    padding: 40px
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-about {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--footer-color);
+    text-decoration: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+    font-weight: bold;
+}
+
+.footer-button:hover {
+    opacity: 0.8;
+}
+
+.footer-nav {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-social h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-social {
+    flex: 1;
+    min-width: 150px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-decoration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 200px;
+}
+
+.footer-decoration img {
+    width: 200px;
+    height: auto;
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.footer-bottom {
+    background-color: black ;
+    padding: 20px var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* einde footer */

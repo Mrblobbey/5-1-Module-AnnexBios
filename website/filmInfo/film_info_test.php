@@ -36,7 +36,7 @@ include '../includes/film_array.php';
     
     </div><br>
     <div class="button">
-        <a href="filmagenda.php">BEKIJK ALLE FILMS</a>
+        <a href="filmAgenda/filmagenda.php">BEKIJK ALLE FILMS</a>
     </div>
     
     

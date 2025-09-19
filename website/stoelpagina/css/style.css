@@ -16,12 +16,24 @@
 /* header */
 .header {
     background-color: white;
-    min-height: 190px;
+    min-height: 124px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+.header,
+.nav2 {
+    height: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 .logo {
     display: flex;
@@ -338,13 +350,15 @@ body {
 }
 
 .stoel input[type="checkbox"]:checked+span {
-    background: #9E2629; /* JOUW SELECTIE */
+    background: #9E2629;
+    /* JOUW SELECTIE */
     border-color: #9E2629;
 }
 
-.stoel input[type="checkbox"]:disabled + span,
+.stoel input[type="checkbox"]:disabled+span,
 .stoel.disabled span {
-    background: #bdbdbd !important; /* BEZET */
+    background: #bdbdbd !important;
+    /* BEZET */
     border-color: #616161 !important;
     cursor: not-allowed;
 }
@@ -371,6 +385,7 @@ body {
     justify-content: center;
     margin: 24px 0 12px 0;
 }
+
 .stoel-legenda .legend-btn {
     border: none;
     border-radius: 5px;
@@ -383,13 +398,16 @@ body {
     min-width: 120px;
     transition: none;
 }
+
 .stoel-legenda .vrij {
     background: #e57373;
 }
+
 .stoel-legenda .bezet {
     background: #bdbdbd;
     color: #444;
 }
+
 .stoel-legenda .jouw {
     background: #9E2629;
 }

@@ -247,7 +247,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <td colspan="3" style="text-align:left; padding-top:12px;">
                             <label for="voucher">Vouchercode:</label>
                             <input type="text" name="voucher" id="voucher" maxlength="32" autocomplete="off">
-                             <button type="submit" name="voucher_toevoegen" value="1" style="margin-left:8px;">Voeg toe</button>
+                            <button type="submit" name="voucher_toevoegen" value="1" style="margin-left:8px;">Voeg
+                                toe</button>
                         </td>
                     </tr>
                 </table>

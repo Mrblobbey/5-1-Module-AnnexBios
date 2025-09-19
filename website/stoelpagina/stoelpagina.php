@@ -9,7 +9,7 @@ session_start();
 require_once '../includes/db.php';
 require_once '../includes/config.php';
 
-$movie_screening_id = (int)($_GET['id'] ?? 0);
+$movie_screening_id = (int) ($_GET['id'] ?? 0);
 if ($movie_screening_id < 1) {
     exit("Ongeldige filmvertoning.");
 }
@@ -29,14 +29,14 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 $response = curl_exec($ch);
 
 // hier checkt hij of er een error is anders stopt hij de code 
-if(curl_errno($ch)){
+if (curl_errno($ch)) {
     exit("Er is een fout opgetreden met de api.");
 }
 // hier maakt hij de terugkoppeling van de aanvraag in jason 
 $movieData = json_decode($response, true);
 
 // hier checkt hij de database error en stopt de code bij error 
-if($movieData['status'] !== 'success'){
+if ($movieData['status'] !== 'success') {
     exit("Er is een fout opgetreden met de api.");
 }
 // hier pakt hij de film data als alles goed is 
@@ -54,8 +54,8 @@ $movie_screening_id = 123; // id van de filmvertoning
 
 // Ticketprijzen
 $PRIJS_NORMAAL = 9.00;
-$PRIJS_KIND    = 5.00;
-$PRIJS_65      = 7.00;
+$PRIJS_KIND = 5.00;
+$PRIJS_65 = 7.00;
 
 /* =====================================================
    VERVANGT OUDE SESSIE-CODE: bezette stoelen laden
@@ -82,27 +82,31 @@ try {
    FORM VERWERKING (POST)
    ===================================================== */
 
-$errors  = [];
+$errors = [];
 $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $voornaam   = htmlspecialchars(trim($_POST['voornaam'] ?? ''));
+    $voornaam = htmlspecialchars(trim($_POST['voornaam'] ?? ''));
     $achternaam = htmlspecialchars(trim($_POST['achternaam'] ?? ''));
-    $email      = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
+    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
 
     $gekozenStoelen = isset($_POST['stoelen']) && is_array($_POST['stoelen']) ? $_POST['stoelen'] : [];
 
-    $aantal_normaal = max(0, min(10, (int)($_POST['aantal_normaal'] ?? 0)));
-    $aantal_kind    = max(0, min(10, (int)($_POST['aantal_kind'] ?? 0)));
-    $aantal_65      = max(0, min(10, (int)($_POST['aantal_65'] ?? 0)));
+    $aantal_normaal = max(0, min(10, (int) ($_POST['aantal_normaal'] ?? 0)));
+    $aantal_kind = max(0, min(10, (int) ($_POST['aantal_kind'] ?? 0)));
+    $aantal_65 = max(0, min(10, (int) ($_POST['aantal_65'] ?? 0)));
 
     if (($aantal_normaal + $aantal_kind + $aantal_65) < 1) {
         $errors[] = "Selecteer minimaal 1 ticket.";
     }
-    if (!$voornaam)   $errors[] = "Voornaam is verplicht.";
-    if (!$achternaam) $errors[] = "Achternaam is verplicht.";
-    if (!$email)      $errors[] = "Ongeldig e-mailadres.";
-    if (count($gekozenStoelen) < 1) $errors[] = "Selecteer minimaal 1 stoel.";
+    if (!$voornaam)
+        $errors[] = "Voornaam is verplicht.";
+    if (!$achternaam)
+        $errors[] = "Achternaam is verplicht.";
+    if (!$email)
+        $errors[] = "Ongeldig e-mailadres.";
+    if (count($gekozenStoelen) < 1)
+        $errors[] = "Selecteer minimaal 1 stoel.";
 
     foreach ($gekozenStoelen as $uiId) {
         if (in_array($uiId, $bezetStoelen, true)) {
@@ -112,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $totaal = $aantal_normaal * $PRIJS_NORMAAL
-                + $aantal_kind    * $PRIJS_KIND
-                + $aantal_65      * $PRIJS_65;
+            + $aantal_kind * $PRIJS_KIND
+            + $aantal_65 * $PRIJS_65;
 
         try {
             $conn->beginTransaction();
@@ -123,12 +127,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $q->execute([':e' => $email]);
             $row = $q->fetch();
             if ($row) {
-                $customer_id = (int)$row['customer_id'];
+                $customer_id = (int) $row['customer_id'];
             } else {
                 $ins = $conn->prepare("INSERT INTO customers (email, first_name, last_name) VALUES (:e,:f,:l)");
-                $ins->execute([':e'=>$email, ':f'=>$voornaam, ':l'=>$achternaam]);
+                $ins->execute([':e' => $email, ':f' => $voornaam, ':l' => $achternaam]);
 
-                $customer_id = (int)$conn->lastInsertId();
+                $customer_id = (int) $conn->lastInsertId();
             }
 
             // Order maken
@@ -137,11 +141,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 VALUES (:ms, :cid, :tot, 'paid')
             ");
             $o->execute([
-                ':ms'=>$movie_screening_id,
-                ':cid'=>$customer_id,
-                ':tot'=>$totaal
+                ':ms' => $movie_screening_id,
+                ':cid' => $customer_id,
+                ':tot' => $totaal
             ]);
-            $order_id = (int)$conn->lastInsertId();
+            $order_id = (int) $conn->lastInsertId();
 
             // Tickets maken (let op: we slaan row_label en seat_number direct op in tickets)
             foreach ($gekozenStoelen as $uiId) {
@@ -157,9 +161,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                       AND tc.status = 'valid'
                 ");
                 $checkIfSeatIsAvailable->execute([
-                    ':msid'=>$movie_screening_id,
-                    ':r'=>$rowLabel,
-                    ':n'=>$seatNumber
+                    ':msid' => $movie_screening_id,
+                    ':r' => $rowLabel,
+                    ':n' => $seatNumber
                 ]);
                 $countRow = $checkIfSeatIsAvailable->fetch();
 
@@ -172,8 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     VALUES (:od, :row, :num, :pr, 'valid')
                 ");
                 $t->execute([
-                    ':od'=>$order_id, ':row'=>$rowLabel, ':num'=>$seatNumber,
-                    ':pr'=>$prijs
+                    ':od' => $order_id,
+                    ':row' => $rowLabel,
+                    ':num' => $seatNumber,
+                    ':pr' => $prijs
                 ]);
             }
 
@@ -191,6 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="css/style.css?v=<?php echo filemtime('css/style.css'); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
@@ -216,10 +223,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="stap">
                 <h2>STAP 1: KIES JE TICKET</h2>
                 <table>
-                    <tr><th>TYPE</th><th>PRIJS</th><th>AANTAL</th></tr>
-                    <tr><td>Normaal</td><td>€9,00</td><td><input type="number" name="aantal_normaal" min="0" max="10" value="0"></td></tr>
-                    <tr><td>Kind</td><td>€5,00</td><td><input type="number" name="aantal_kind" min="0" max="10" value="0"></td></tr>
-                    <tr><td>65+</td><td>€7,00</td><td><input type="number" name="aantal_65" min="0" max="10" value="0"></td></tr>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>PRIJS</th>
+                        <th>AANTAL</th>
+                    </tr>
+                    <tr>
+                        <td>Normaal</td>
+                        <td>€9,00</td>
+                        <td><input type="number" name="aantal_normaal" min="0" max="10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Kind</td>
+                        <td>€5,00</td>
+                        <td><input type="number" name="aantal_kind" min="0" max="10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>65+</td>
+                        <td>€7,00</td>
+                        <td><input type="number" name="aantal_65" min="0" max="10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:left; padding-top:12px;">
+                            <label for="voucher">Vouchercode:</label>
+                            <input type="text" name="voucher" id="voucher" maxlength="32" autocomplete="off">
+                             <button type="submit" name="voucher_toevoegen" value="1" style="margin-left:8px;">Voeg toe</button>
+                        </td>
+                    </tr>
                 </table>
             </div>
 
@@ -228,9 +258,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="stoelen">
                     <div>FILMDOEK</div>
                     <?php
-                    for ($rij=1; $rij<=8; $rij++) {
+                    for ($rij = 1; $rij <= 8; $rij++) {
                         echo '<div class="stoel-rij">';
-                        for ($stoel=1; $stoel<=12; $stoel++) {
+                        for ($stoel = 1; $stoel <= 12; $stoel++) {
                             $id = "stoel_{$rij}_{$stoel}";
                             $disabled = in_array($id, $bezetStoelen) ? 'disabled' : '';
                             echo '<label class="stoel">';
@@ -251,6 +281,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="email" name="email" placeholder="E-mailadres" required>
             </div>
 
+            <div class="stap">
+                <h2>STAP 5: KIES JE BETAALWIJZE</h2>
+                <label><input type="radio" name="betaalwijze" value="abn" required> ABN AMRO</label><br>
+                <label><input type="radio" name="betaalwijze" value="ing"> ING</label><br>
+                <label><input type="radio" name="betaalwijze" value="rabobank"> Rabobank</label><br>
+            </div>
+
+            <div class="stap">
+                <label>
+                    <input type="checkbox" name="akkoord" required>
+                    Ik ga akkoord met de <a href="/algemene-voorwaarden.pdf" target="_blank">algemene voorwaarden</a>
+                </label>
+            </div>
             <button class="afrekenen" type="submit">AFREKENEN</button>
         </form>
     </div>

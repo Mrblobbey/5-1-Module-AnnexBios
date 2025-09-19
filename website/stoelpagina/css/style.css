@@ -424,6 +424,22 @@ body {
     font-size: 0.95rem;
 }
 
+button[name="voucher_toevoegen"] {
+    background-color: #a62b2b;
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-left: 8px;
+}
+button[name="voucher_toevoegen"]:hover {
+    background-color: #7d2020;
+}
+
+
 /* Gegevens invullen */
 .stap input[type="text"],
 .stap input[type="email"] {

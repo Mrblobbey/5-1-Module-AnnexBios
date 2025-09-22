@@ -1,0 +1,372 @@
+header
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ===== VARIABLES ===== */
+:root {
+    --vesting-color: #9E2629;
+    --footer-color: #666666;
+    --basic-font: 'lato', sans-serif;
+    --border-radius: 80px;
+    --transition: 0.2s ease;
+}
+ 
+/* ===== BODY & BACKGROUND ===== */
+body {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: cover;
+    position: absolute;
+}
+ 
+.background {
+    min-height: 200%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 2;
+    position: absolute;
+}
+ 
+.container {
+    z-index: 3;
+    position: relative;
+}
+ 
+/* ===== HEADER STYLES ===== */
+.header {
+    background-color: white;
+    min-height: 190px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: flex-end;
+    padding-left: var(--border-radius);
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Ensure text color is inherited */
+ 
+}
+ 
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+}
+ 
+.logo h1 {
+    font-family: var(--basic-font);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--vesting-color);
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+    display: inline;
+    text-decoration: none;
+}
+ 
+#popcorn-img {
+    height: 50px;
+    width: auto;
+    vertical-align: bottom;
+    display: inline-block;
+}
+ 
+#filmroll-img {
+    position: absolute;
+    bottom: -22px;
+    left: 195px;
+    width: 150px;
+    height: auto;
+    z-index: 3;
+    margin: 0;
+    display: block;
+    transform: scale(0.31);
+    transform-origin: left center;
+    pointer-events: none;
+}
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.main-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 80px;
+}
+ 
+.nav2 {
+    background-color: var(--vesting-color);
+    width: 100%;
+    padding: 20px 0;
+    margin-top: auto;
+}
+ 
+.nav2 form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 80px;
+}
+.nav2 button {
+    background-color:white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+}
+ 
+.nav2 label {
+font-family: 'lato', sans-serif;
+font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+ 
+.nav2 select {
+    padding: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 180px;
+    box-shadow: none; /* Removed incomplete box-shadow */
+}
+/* einde header */
+
+/* begin footer */
+.main-footer {
+    background-color: var(--footer-color);
+    color: white;
+    font-family: var(--basic-font);
+    margin-top: 50px;
+}
+
+.footer-container {
+    padding: 40px 0px 40px var(--border-radius);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-about {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--footer-color);
+    text-decoration: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+    font-weight: bold;
+}
+
+.footer-button:hover {
+    opacity: 0.8;
+}
+
+.footer-nav {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-social h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-social {
+    flex: 1;
+    min-width: 150px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-decoration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 200px;
+}
+
+.footer-decoration img {
+    width: 200px;
+    height: auto;
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.footer-bottom {
+    background-color: black;
+    padding: 20px var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* einde footer */
+/* ===== FILM INFO PAGE ===== */
+.film_container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    margin-top: 30px;
+    gap: 20px;
+    z-index: 3;
+    min-height: 350px;
+}
+
+.filmtitle {
+    background-color: aliceblue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 67%;
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: var(--basic-font);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 0;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.filminfo {
+    background-color: rgb(255, 255, 255);
+    max-width: 37.5%;
+    padding: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: var(--basic-font);
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    flex: 1 1 0;
+}
+
+.filmimage {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.filmimage img {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+}
+
+@media (max-width: 900px) {
+  .film_container {
+    flex-direction: column;
+    min-height: unset;
+  }
+  .filmimage, .filminfo {
+    max-width: 100%;
+    height: 500px;
+    flex: unset;
+  }
+  .filmimage img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,17 +1,18 @@
-<footer class="main-footer">
+<footer class="main-footer" role="contentinfo">
+    <div class="footer-top">
     <div class="footer-container">
-    <img src="Photos/footer_logo.svg" alt="">
-        <div class="footer-content">
-            
+            <div class="footer-grid">
+                <!-- About Section -->
             <div class="footer-about">
+                <img src="Photos/footer_logo.svg" alt="AnnexBios Logo" class="footer-logo">
                 <p> 
-                Lorem ipsum dolor sit amet, consectetuer<br> 
-                adipiscing elit. Aenean commodo ligula eget<br>
-                dolor. Aenean massa. Cum sociis natoque<br>
-                penatibus et magnis dis parturient montes,<br>
-                nascetur ridiculus mus. Donec quam felis.
+                    Lorem ipsum dolor sit amet, consectetuer<br> 
+                    adipiscing elit. Aenean commodo ligula eget<br>
+                    dolor. Aenean massa. Cum sociis natoque<br>
+                    penatibus et magnis dis parturient montes,<br>
+                    nascetur ridiculus mus. Donec quam felis.
                 </p>
-                <a class="footer-button" href="#">LEES MEER</a>
+                    <a href="over-ons.php" class="footer-button">LEES MEER</a>
             </div>
 
             <div class="footer-nav">
@@ -19,27 +20,25 @@
                 <ul>
                     <li><a href="#">Werken bij</a></li>
                     <li><a href="#">Veelgestelde vragen</a></li>
-                    <li><a href="#">Vestegingen</a></li>
+                    <li><a href="#">Vestigingen</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-social">
-                <h3>VOLG ONS</h3>
+                    <h3 class="footer-heading">VOLG ONS</h3>
+                    <p class="social-text">Blijf op de hoogte van de laatste films en aanbiedingen</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
-            </div>
-
-
-            <div class="footer-decoration">
-                <img src="Photos/filmroll_footer.svg" alt="Film roll decoration">
             </div>
         </div>
     </div>
-
+    <div class="footer-decoration">
+        <img src="photos/filmroll_footer.svg" alt="" aria-hidden="true" class="film-roll-decoration">
+    </div>
     <div class="footer-bottom">
         <div class="footer-links">
             <a href="#">Voorwaarden</a>

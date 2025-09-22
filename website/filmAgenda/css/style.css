@@ -1,17 +1,18 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* makkelijke variabelen */
+/* ===== VARIABLES ===== */
 :root {
     --vesting-color: #9E2629;
     --footer-color: #666666;
-    --basic-font: 'lato', sans-serif;
+    --basic-font: 'Lato', sans-serif;
     --border-radius: 80px;
+    --transition: 0.2s ease;
 }
-
-/* achtergrond */
 body {
     background-image: url("../photos/header_afbeelding.jpg");
     background-repeat: no-repeat;
@@ -21,6 +22,7 @@ body {
     background-size: cover;
     position: absolute;
 }
+
 .background {
     min-height: 200%;
     width: 100%;
@@ -29,20 +31,20 @@ body {
     z-index: 2;
     position: absolute;
 }
+
 .container {
     z-index: 3;
     position: relative;
 }
-/* einde achtergrond*/
 
-/* header */
+/* ===== HEADER STYLES ===== */
 .header {
     background-color: white;
-    min-height: 190px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center; 
+    align-items: center;
+    padding: 20px;
 }
 .logo {
     display: flex;
@@ -109,13 +111,13 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     padding-right: 80px;
+    font-family: var(--basic-font);
 }
  
 .nav2 {
     background-color: var(--vesting-color);
     width: 100%;
     padding: 20px 0;
-    margin-top: auto;
 }
 
 .nav2 form {
@@ -132,6 +134,7 @@ body {
     cursor: pointer; 
     text-transform: uppercase;
     font-family: var(--basic-font);
+    font-weight: bold;
 }
 
 .nav2 label {
@@ -144,52 +147,131 @@ body {
 .nav2 select {
     padding: 5px;
     border: none;
-    background-color: var(--vesting-color);
-    box-shadow: inset;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     width: 180px;
+    box-shadow: none; /* Removed incomplete box-shadow */
 }
-/* einde header */
-/* begin filmagenda */
+
+/* ===== FILM AGENDA STYLES ===== */
 .filmagenda {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    margin: 20px var(--border-radius);
+    margin: 40px var(--border-radius);
+    width: 43%;
+    box-sizing: border-box;
 }
-  
+
 .filmagenda h2 {
-    color: #991b1b;
-    margin: 0;
+    color: var(--vesting-color);
     background-color: white;
-    padding: 20px;
+    padding: 20px 20px;
+    display: inline-block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
 }
-  
+
 .filters {
     display: flex;
-    gap: 10px;
+    padding-top: 15px;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-button {
+.tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ==== TABS BUTTONS ==== */
+.tabs button {
+    position: relative;
+    padding: 10px 20px 10px 40px; /* ruimte voor het bolletje links */
+    text-align: left;
+    background: white;
+    cursor: pointer;
+    font-family: var(--basic-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: none;
+}
+.tabs button::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #999;
+    border-radius: 50%;
+    background: white;
+    transition: var(--transition);
+}
+.tabs button.active {
+    color: var(--vesting-color);
+}
+.tabs button.active::before {
+    background: var(--vesting-color);
+    border-color: var(--vesting-color);
+}
+.tabs button.active::after {
+    content: "✓";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    text-align: center;
+    line-height: 18px;
+}
+
+/* ==== SELECT DROPDOWN ==== */
+.filters select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    font-family: var(--basic-font);
     background-color: white;
-    padding: 20px;
-    
+    color: #333;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-left: 15px;
 }
 
-/* einde filmagenda */
+/* ==== FILTER ICON (alleen icoon, geen tekst) ==== */
+.filter-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+.filter-icon img {
+    width: 40px;
+    height: 40px;
+}
+/* ===== EINDE FILM AGENDA STYLES ===== */
 
 
-/*begin filmcontainer*/
+/* ===== FILM CONTAINER STYLES ===== */
 .film_container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
-    margin: 20px var(--border-radius);
+    margin: 15px var(--border-radius);
 }
-
 .film_card {
     background-color: white;
     overflow: hidden;
@@ -197,7 +279,7 @@ button {
     flex-direction: column;
     height: 100%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: var(--transition);
 }
 .film_afbeelding {
     width: 100%;
@@ -229,144 +311,162 @@ button {
     color: white;
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition);
     background-color: var(--vesting-color);
 }
-/* einde filmcontainer */
-/* footer */
+
+/* ===== FOOTER STYLES ===== */
+ /* ===== Footer Basis ===== */
 .main-footer {
-    background-color: var(--footer-color);
-    color: white;
-    font-family: var(--basic-font);
-    margin-top: 50px;
-}
-
-.footer-container {
-    padding: 40px
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    background-color: #666; /* grijze achtergrond */
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    padding-top: 40px;
+  }
+   
+  /* ===== Grid ===== */
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+   
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    flex-wrap: wrap;
-}
-
-.footer-about {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-about p {
+  }
+   
+  /* ===== About Section ===== */
+  .footer-about {
+    max-width: 400px;
+  }
+   
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+   
+  .footer-about p {
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
-}
-
-.footer-button {
+  }
+   
+  .footer-button {
     display: inline-block;
-    background-color: white;
-    color: var(--footer-color);
+    background: #fff;
+    color: #444;
     text-decoration: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: var(--basic-font);
-    font-weight: bold;
-}
-
-.footer-button:hover {
-    opacity: 0.8;
-}
-
-.footer-nav {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-social h3 {
-    color: white;
-    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 18px;
+    transition: background 0.3s ease;
+  }
+   
+  .footer-button:hover {
+    background: #ddd;
+  }
+   
+  /* ===== Navigatie ===== */
+  .footer-nav h3 {
     font-size: 16px;
     font-weight: bold;
-}
-
-.footer-nav ul {
+    margin-bottom: 15px;
+  }
+   
+  .footer-nav ul {
     list-style: none;
-    padding: 0;
-}
-
-.footer-nav li {
-    margin-bottom: 10px;
-}
-
-.footer-nav a {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.footer-nav a:hover {
-    opacity: 0.7;
-}
-
-.footer-social {
-    flex: 1;
-    min-width: 150px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: white;
-    font-size: 24px;
-    transition: opacity 0.3s;
-}
-
-.social-links a:hover {
-    opacity: 0.7;
-}
-
-.footer-decoration {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 200px;
-}
-
-.footer-decoration img {
-    width: 200px;
-    height: auto;
-    opacity: 0.8;
-    flex-shrink: 0;
-    margin-left: auto;
-}
-.footer-bottom {
-    background-color: black ;
-    padding: 20px var(--border-radius);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-bottom p {
     margin: 0;
-}
-
-.footer-links {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-links a {
-    color: white;
+    padding: 0;
+  }
+   
+  .footer-nav li {
+    margin-bottom: 10px;
+  }
+   
+  .footer-nav a {
     text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+   
+  .footer-nav a:hover {
+    color: #ddd;
+  }
+   
+  /* ===== Socials ===== */
+  .footer-social h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+   
+  .footer-social .social-text {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #ddd;
+  }
+   
+  .social-links a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+   
+  .social-links a:hover {
+    color: #ddd;
+  }
+   
+  /* ===== Filmrol decoratie ===== */
+  .footer-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+   
+  .film-roll-decoration {
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+   
+  /* ===== Footer Bottom ===== */
+  .footer-bottom {
+    background: #000;
+    text-align: left;
+    padding: 12px 0;
+    margin-top: 40px;
+  }
+   
+  .footer-links a {
+    color: #fff;
+    font-size: 13px;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+   
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+/* ===== MEDIA QUERIES ===== */
+/*media queries filmcontainer*/
+/* tablet: 3 kolommen */
+@media (max-width: 1024px) {
+    .film_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-/* einde footer */
+/* mobiel: 2 kolommen */
+@media (max-width: 600px) {
+    .film_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* einde media queries filmcontainer */

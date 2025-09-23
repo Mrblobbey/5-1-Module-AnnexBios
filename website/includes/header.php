@@ -16,17 +16,23 @@
             </ul>
         </nav>
     </div>    
-    <div class="nav2">
-        <form action="action_page.php" method="get">
-            <label for="browser">Koop je tickets</label>
-            <select name="browser" id="browser" placeholder="Kies je film">
-                <option value="" selected disabled>Kies je film</option>
-                <option value="jasper">Jasper</option>
-                    <option value="rody">Rody</option>
-                    <option value="minions">Minions</option>
-                    <option value="film">Film</option>
-                    <option value="hendrik hogendijk">Hendrik Hogendijk</option>
-                </select>
-                <button class="big-white-button" type="submit">Bestel tickets</button>
-        </form>
-    </div>
+<div class="nav2">
+    <!-- Formulier om tickets te kopen -->
+    <form action="action_page.php" method="get">
+        <label for="browser">Koop je tickets</label>
+
+        <select name="film_id" id="browser">
+            <option value="" selected disabled>Kies je film</option>
+
+            <?php
+            // We lopen door dezelfde $films array als op index.php
+            foreach ($films as $film): ?>
+                <option value="<?php echo $film['id']; ?>">
+                    <?php echo htmlspecialchars($film['movie']['title']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <button class="big-white-button" type="submit">Bestel tickets</button>
+    </form>
+</div>

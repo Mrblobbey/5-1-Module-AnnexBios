@@ -231,17 +231,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <tr>
                         <td>Normaal</td>
                         <td>€9,00</td>
-                        <td><input type="number" name="aantal_normaal" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_normaal" min="0" max="10"
+                                value="<?php echo isset($aantal_normaal) ? (int) $aantal_normaal : 0; ?>"></td>
                     </tr>
                     <tr>
                         <td>Kind</td>
                         <td>€5,00</td>
-                        <td><input type="number" name="aantal_kind" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_kind" min="0" max="10"
+                                value="<?php echo isset($aantal_kind) ? (int) $aantal_kind : 0; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td>65+</td>
                         <td>€7,00</td>
-                        <td><input type="number" name="aantal_65" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_65" min="0" max="10"
+                                value="<?php echo isset($aantal_65) ? (int) $aantal_65 : 0; ?>"></td>
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align:left; padding-top:12px;">
@@ -279,8 +283,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h3>STAP 3: OVERZICHT</h3>
                 <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>">
                 <P><?php echo $film['movie']['title']; ?></p>
-                <p><?php echo $film['movie']['overview']; ?></p>
-                <p>Tijd: <?php echo $film['movie']['start_time']; ?></p>
+                // iconen voor film //
+                <p>Bioscoop: Hellevoetsluit Zaal:<?php echo $film['cinema']['auditorium_number']; ?></p>
+                <p>Wanneer: <?php echo $film['cinema']['start_time']; ?></p>
+                <p>tickets: <?php echo "(Normaal: " . (isset($aantal_normaal) ? (int) $aantal_normaal : 0) .
+                    ", Kind: " . (isset($aantal_kind) ? (int) $aantal_kind : 0) .
+                    ", 65+: " . (isset($aantal_65) ? (int) $aantal_65 : 0) . ")";
+                ?></p>
+                <p>Totaal: €
+                    <?php
+                    $totaalPrijs = ($aantal_normaal * $PRIJS_NORMAAL) +
+                        ($aantal_kind * $PRIJS_KIND) +
+                        ($aantal_65 * $PRIJS_65);
+                    $totaalAantal = (isset($aantal_normaal) ? (int) $aantal_normaal : 0)
+                        + (isset($aantal_kind) ? (int) $aantal_kind : 0)
+                        + (isset($aantal_65) ? (int) $aantal_65 : 0);
+                    if ($totaalAantal > 0) {
+                        echo number_format($totaalPrijs, 2);
+                    } else {
+                        echo "Nog geen kaartjes";
+                    }
+                    ?>
+                </p>
+
 
             </div>
 

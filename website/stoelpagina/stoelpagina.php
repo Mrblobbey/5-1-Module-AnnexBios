@@ -284,9 +284,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="stap">
                 <h2>STAP 5: KIES JE BETAALWIJZE</h2>
-                <label><input type="radio" name="betaalwijze" value="abn" required> ABN AMRO</label><br>
-                <label><input type="radio" name="betaalwijze" value="ing"> ING</label><br>
-                <label><input type="radio" name="betaalwijze" value="rabobank"> Rabobank</label><br>
+                <label><input type="radio" name="betaalwijze" value="ideal" required> Ideal</label><br>
+                <label><input type="radio" name="betaalwijze" value="meastro"> Maestro</label><br>
+                <label><input type="radio" name="betaalwijze" value="biosbon"> Nationale Bioscoopbon</label><br>
             </div>
 
             <div class="stap">

@@ -85,6 +85,12 @@ try {
 $errors = [];
 $success = '';
 
+// Zorg voor standaardwaarden, zodat er geen warnings komen
+$aantal_normaal = 0;
+$aantal_kind = 0;
+$aantal_65 = 0;
+$totaalAantal = 0;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $voornaam = htmlspecialchars(trim($_POST['voornaam'] ?? ''));
     $achternaam = htmlspecialchars(trim($_POST['achternaam'] ?? ''));
@@ -231,17 +237,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <tr>
                         <td>Normaal</td>
                         <td>€9,00</td>
-                        <td><input type="number" name="aantal_normaal" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_normaal" min="0" max="10"
+                                value="<?php echo isset($aantal_normaal) ? (int) $aantal_normaal : 0; ?>"></td>
                     </tr>
                     <tr>
                         <td>Kind</td>
                         <td>€5,00</td>
-                        <td><input type="number" name="aantal_kind" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_kind" min="0" max="10"
+                                value="<?php echo isset($aantal_kind) ? (int) $aantal_kind : 0; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td>65+</td>
                         <td>€7,00</td>
-                        <td><input type="number" name="aantal_65" min="0" max="10" value="0"></td>
+                        <td><input type="number" name="aantal_65" min="0" max="10"
+                                value="<?php echo isset($aantal_65) ? (int) $aantal_65 : 0; ?>"></td>
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align:left; padding-top:12px;">
@@ -276,12 +286,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="stap">
-                <h3>STAP 3: OVERZICHT</h3>
-                <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>">
-                <P><?php echo $film['movie']['title']; ?></p>
-                <p><?php echo $film['movie']['overview']; ?></p>
-                <p>Tijd: <?php echo $film['movie']['start_time']; ?></p>
+                <h2>STAP 3: CONTROLEER JE BESTELLING</h2>
+                <div class="bestelling-overzicht">
+                    <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>" alt="Poster">
 
+                    <div class="bestelling-info">
+                        <h3><?php echo $film['movie']['title']; ?></h3>
+
+                        <div class="bestelling-icons">
+                            <!-- hier komen jouw icoontjes dynamisch -->
+                            <img src="icons/12.png" alt="Leeftijd 12+">
+                            <img src="icons/action.png" alt="Actie">
+                            <img src="icons/adventure.png" alt="Avontuur">
+                        </div>
+
+                        <p>Bioscoop: Hellevoetsluit (Zaal <?php echo $film['cinema']['auditorium_number']; ?>)</p>
+                        <p>Wanneer: <?php echo $film['cinema']['start_time']; ?></p>
+
+                        <?php if ($totaalAantal > 0): ?>
+                            <p>Tickets:
+                                <?php echo $aantal_normaal . "x normaal, " . $aantal_kind . "x kind, " . $aantal_65 . "x 65+"; ?>
+                            </p>
+                            <p class="bestelling-totaal">Totaal <?php echo $totaalAantal; ?> ticket(s):
+                                €<?php echo number_format($totaal, 2, ',', '.'); ?></p>
+                        <?php else: ?>
+                            <p>Nog geen kaartjes</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
 
             <div class="stap">
@@ -306,6 +338,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button class="afrekenen" type="submit">AFREKENEN</button>
         </form>
+    </div>
+
+    <div class="Mini-sideposter">
+        <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>" alt="Poster">
+        <p><?php echo $film['movie']['title']; ?></p>
     </div>
 </body>
 

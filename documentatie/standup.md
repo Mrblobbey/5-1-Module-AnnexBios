@@ -57,3 +57,18 @@ Bas verder werken aan de film info pagina
 Levi verder css van de stoelpagina en dan nog verdere details
 Jasper ...
 Rody verder werken aan api data invoegen
+
+
+Donderdag 18-09-2025
+
+
+
+vrijdag 19-09-2025
+
+
+
+Maandag 22-09-2025
+
+
+
+dinsdag 23-09-2025

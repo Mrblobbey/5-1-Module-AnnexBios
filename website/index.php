@@ -187,7 +187,7 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
                     <p>Tijd: <?php echo $film['start_time']; ?></p>
                     <p>Rating: <?php echo $film['movie']['vote_average']; ?></p>
                     <div class="button">
-                        <a href="filmagenda.php?id=<?php echo $film['id'] ?>">MEER INFO EN TICKETS</a>
+                        <a href="stoelpagina/stoelpagina.php?id=<?php echo $film['id'] ?>">MEER INFO EN TICKETS</a>
                     </div>
                 </div>
             <?php endforeach; ?>

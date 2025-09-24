@@ -26,6 +26,7 @@ $films = [
         'lmdb score' => '8.8/10',
         'regisseur' => 'Christopher Nolan',
         'acteurs' => 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page',
+        'video' => 'https://www.youtube.com/embed/8hP9D6kZseM',
     ],
     [
         'id' => '2',
@@ -39,6 +40,7 @@ $films = [
         'lmdb score' => '8.8/10',
         'regisseur' => 'Christopher Nolan',
         'acteurs' => 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page',
+        'video' => 'https://www.youtube.com/embed/8hP9D6kZseM',
     ],
 ];
 ?>

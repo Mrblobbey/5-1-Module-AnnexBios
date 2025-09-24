@@ -339,6 +339,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="afrekenen" type="submit">AFREKENEN</button>
         </form>
     </div>
+
+    <div class="Mini-sideposter">
+        <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>" alt="Poster">
+        <p><?php echo $film['movie']['title']; ?></p>
+    </div>
 </body>
 
 <?php include '../includes/footer.php'; ?>

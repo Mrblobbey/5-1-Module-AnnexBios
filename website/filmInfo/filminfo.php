@@ -35,6 +35,14 @@ include '../includes/film_array.php';
     </div>
     <div class="filminfo">
         <p><?php echo $film['beschrijving']; ?></p>
+        <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
+        <p><strong>Genre:</strong> <?php echo $film['genre']; ?></p>
+        <p><strong>Filmlengte:</strong> <?php echo $film['filmlengte']; ?></p>
+        <p><strong>Land:</strong> <?php echo $film['land']; ?></p>
+        <p><strong>LMDB Score:</strong> <?php echo $film['lmdb score']; ?></p>
+        <p><strong>Regisseur:</strong> <?php echo $film['regisseur']; ?></p>
+        <p><strong>Acteurs:</strong> <?php echo $film['acteurs']; ?></p>
+ 
     </div>
     
     </div>

@@ -291,14 +291,55 @@ body {
 
 
 
-/* Mini filminfo */
-.mini-filminfo {
+/* Overzicht blok (Stap 3) */
+.bestelling-overzicht {
+    border: 2px solid #9E2629;   /* rode rand */
+    padding: 16px;
+    margin: 20px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
     background: #fff;
-    border-left: 4px solid var(--vesting-color);
-    padding: 8px 12px;
-    margin: 0 32px 20px 32px;
+}
+
+.bestelling-overzicht img {
+    width: 160px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.bestelling-info {
+    flex: 1;
+}
+
+.bestelling-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #555;
+    margin: 0 0 8px 0;
+}
+
+.bestelling-icons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.bestelling-icons img {
+    height: 28px;
+    width: auto;
+}
+
+.bestelling-info p {
+    margin: 4px 0;
     font-size: 0.95rem;
     color: #333;
+}
+
+.bestelling-totaal {
+    font-weight: 700;
+    margin-top: 8px;
+    color: #000;
 }
 
 /* Stoelen layout */

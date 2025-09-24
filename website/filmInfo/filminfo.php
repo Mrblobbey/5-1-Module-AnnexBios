@@ -25,34 +25,61 @@ include '../includes/film_array.php';
         <?php
             include '../includes/header.php';
             ?>
-<br> <br> <br> <br>
-
-<div class="filminfo_h2">
-
-    <h1><?php echo $film['titel']; ?></h1>
-    <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" width="300">
-    <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
-    <p><?php echo $film['beschrijving']; ?></p>
-
+<br><br>
+<div class="filmtitle">
+    <h2><?php echo $film['titel'] ?></h2>
 </div>
-
-
-<div class="stap">
-    
-    
-    </div><br><br><br><br><br><br>
-    <div class="button">
-        <a href="filmAgenda/filmagenda.php">BEKIJK ALLE FILMS</a>
+<div class="film_container">
+    <div class="filmimage">
+    <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>">
+    </div>
+    <div class="filminfo">
+        <p><?php echo $film['beschrijving']; ?></p>
+        <p><strong>Genre:</strong> <?php echo $film['genre']; ?></p>
+        <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
+        <p><strong>Filmlengte:</strong> <?php echo $film['filmlengte']; ?></p>
+        <p><strong>Land:</strong> <?php echo $film['land']; ?></p>
+        <p><strong>LMDB Score:</strong> <?php echo $film['lmdb score']; ?></p>
+        <p><strong>Regisseur:</strong> <?php echo $film['regisseur']; ?></p>
+        <p><strong>Acteurs:</strong> <?php echo $film['acteurs']; ?></p>
+ 
     </div>
     
+    </div>
+    <a href="../tickets/tickets.php?id=<?php echo $film['id']; ?>" class="koop_tickets">
+        <p>Koop je Tickets</p>
+    </a>
+
+    <div class="video">
+        <iframe width="560" height="315" src="<?php echo $film['video']; ?>"></iframe>
+    </div>
+
     
-    
-    
-    
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br>
     <?php
 include '../includes/footer.php';
 ?>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

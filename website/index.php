@@ -1,36 +1,5 @@
 <?php
-require './includes/config.php';
 
-//  hier start hij de api aanvraag 
-$ch = curl_init($gluApiUrl . "/api/movies");
-
-// hier zet hij de api key in de http headers 
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "X-API-KEY: " . $gluApikey,
-    "Content-Type: application/json"
-]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-
-// hier kijk of de api goed aangevraagd is
-$response = curl_exec($ch);
-
-// hier checkt hij of er een error is anders stopt hij de code 
-if (curl_errno($ch)) {
-    exit("Er is een fout opgetreden met de api.");
-}
-// hier maakt hij de terugkoppeling van de aanvraag in jason 
-$movieData = json_decode($response, true);
-
-// hier checkt hij de database error en stopt de code bij error 
-if ($movieData['status'] !== 'success') {
-    exit("Er is een fout opgetreden met de api.");
-}
-// hier pakt hij de film data als alles goed is 
-$films = $movieData['data'];
-
-// hier sluit hij de api aanvraag 
-curl_close($ch);
 
 // standaardwaarden voor filters zodat ze werken en ingeladen worden 
 $when = $_GET['when'] ?? 'all';   // all|week|today

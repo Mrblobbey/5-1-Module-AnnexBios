@@ -7,12 +7,15 @@ $films = [
         'tijd' => '19:30',
         'afbeelding' => 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg',
         'genre' => 'Actie',
-        'filmlengte' => '148 min',
+        'filmlengte' => '248 min',
         'land' => 'USA',
         'lmdb score' => '8.8/10',
         'regisseur' => 'Christopher Nolan',
         'acteurs' => 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page',
         'video' => 'https://www.youtube.com/embed/8hP9D6kZseM',
+        'rating' => 4,
+        'icon' => '⭐',
+        'release-date' => '16-07-2010',
     ],
     [
         'id' => '1',
@@ -27,6 +30,9 @@ $films = [
         'regisseur' => 'Christopher Nolan',
         'acteurs' => 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page',
         'video' => 'https://www.youtube.com/embed/8hP9D6kZseM',
+        'rating' => 5,
+        'icon' => '⭐',
+        'release-date' => '19-07-2024',
     ],
     [
         'id' => '2',
@@ -41,6 +47,9 @@ $films = [
         'regisseur' => 'Christopher Nolan',
         'acteurs' => 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page',
         'video' => 'https://www.youtube.com/embed/8hP9D6kZseM',
+        'rating' => 3,
+        'icon' => '⭐',
+        'release-date' => '26-04-2019',
     ],
 ];
 ?>

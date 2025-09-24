@@ -276,6 +276,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="stap">
+                <h3>STAP 3: OVERZICHT</h3>
+                <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>">
+                <P><?php echo $film['movie']['title']; ?></p>
+                <p><?php echo $film['movie']['overview']; ?></p>
+                <p>Tijd: <?php echo $film['movie']['start_time']; ?></p>
+
+            </div>
+
+            <div class="stap">
                 <h2>STAP 4: VUL JE GEGEVENS IN</h2>
                 <input type="text" name="voornaam" placeholder="Voornaam" required>
                 <input type="text" name="achternaam" placeholder="Achternaam" required>

@@ -20,16 +20,19 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center; 
+    align-items: center;
 }
+
 .logo {
     display: flex;
     align-items: flex-end;
     padding-left: var(--border-radius);
     position: relative;
-    padding-bottom: 5px; 
-    text-decoration: none; /* Remove underline from link */
-    color: inherit; /* Ensure text color is inherited */
+    padding-bottom: 5px;
+    text-decoration: none;
+    /* Remove underline from link */
+    color: inherit;
+    /* Ensure text color is inherited */
 
 }
 
@@ -51,29 +54,30 @@
     position: relative;
     z-index: 2;
     display: inline;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 #popcorn-img {
     height: 50px;
     width: auto;
-    vertical-align: bottom; 
+    vertical-align: bottom;
     display: inline-block;
 }
 
 #filmroll-img {
     position: absolute;
-    bottom: -22px; 
+    bottom: -22px;
     left: 195px;
-    width: 150px; 
+    width: 150px;
     height: auto;
     z-index: 1;
     margin: 0;
     display: block;
-    transform: scale(0.31); 
+    transform: scale(0.31);
     transform-origin: left center;
     pointer-events: none;
 }
+
 .nav ul {
     list-style-type: none;
     margin: 0;
@@ -81,6 +85,7 @@
     display: flex;
     gap: 20px;
 }
+
 .nav a {
     text-decoration: none;
     color: black;
@@ -88,12 +93,12 @@
     text-transform: uppercase;
     padding-right: 80px;
 }
- 
+
 .nav2 {
     background-color: var(--vesting-color);
     width: 100%;
-    padding:20px 0;
-    
+    padding: 20px 0;
+
 }
 
 .nav2 form {
@@ -102,19 +107,20 @@
     align-items: center;
     padding-left: 80px;
 }
+
 .nav2 button {
-    background-color:white;
+    background-color: white;
     color: var(--vesting-color);
     border: none;
     padding: 5px 20px;
-    cursor: pointer; 
+    cursor: pointer;
     text-transform: uppercase;
     font-family: var(--basic-font);
 }
 
 .nav2 label {
- font-family: 'lato', sans-serif;
- font-weight: 700;
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     color: white;
 }
@@ -128,57 +134,85 @@
     color: white;
     width: 180px;
 }
+
 /* einde header */
 
-/* ...bestaande code... */
+
 
 /* Algemene body styling */
 body {
-    background: #111;
+    background: #222;
     font-family: var(--basic-font);
     min-height: 100vh;
 }
 
-/* Content container gecentreerd */
+/* Hoofd content container */
 .backgroundform {
     max-width: 900px;
-    margin: 30px auto 0 auto;
+    margin: 40px auto 0 auto;
     background: #fff;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.18);
     border-radius: 0;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    padding: 30px 30px 0 30px;
+    padding: 0 0 40px 0;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 8px solid #222;
+    /* optioneel voor dikke zwarte rand */
 }
 
-/* Koptekst */
+/* Zwarte kopbalk */
 .koptekst {
+    background: #111;
+    color: #9E2629;
     font-family: var(--basic-font);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--vesting-color);
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
     letter-spacing: 1px;
+    padding: 18px 32px 16px 32px;
+    margin: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
 }
 
-/* Dropdown rij */
+/* --- DROPDOWN-RIJ DIRECT ONDER KOPTEKST --- */
 .dropdown-row {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 12px;
+    background: #fff;
+    padding: 18px 32px 18px 32px;
+    margin: 0;
+    border-radius: 0;
+    align-items: center;
+    border-bottom: none;
+    box-sizing: border-box;
 }
 
 .styled-select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 6px 14px;
+    border: 1px solid #bbb;
+    border-radius: 2px;
     font-size: 1rem;
+    min-width: 160px;
+    background: #fff;
+    color: #222;
+    height: 36px;
+    margin-right: 0;
 }
 
 /* Stappen */
 .stap {
     background: #fff;
     border-radius: 0;
-    margin-bottom: 30px;
-    padding: 0 0 20px 0;
+    margin: 32px 32px 0 32px;
+    padding: 0 0 18px 0;
+    box-shadow: none;
+    border: none;
+    position: relative;
 }
 
 .stap h2 {
@@ -190,17 +224,21 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-family: var(--basic-font);
+    border-bottom: 2px solid #9E2629;
+    padding-bottom: 4px;
 }
 
-/* Tabel styling */
+/* Ticket tabel */
 .stap table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10px;
     font-size: 0.95rem;
+    background: transparent;
 }
 
-.stap th, .stap td {
+.stap th,
+.stap td {
     padding: 6px 8px;
     text-align: left;
 }
@@ -210,17 +248,20 @@ body {
     font-weight: 400;
     font-size: 0.95rem;
     border-bottom: 1px solid #ccc;
+    background: none;
 }
 
 .stap td {
     border-bottom: 1px solid #eee;
+    background: none;
 }
 
 .stap input[type="number"] {
-    width: 50px;
-    padding: 3px 5px;
+    width: 42px;
+    padding: 2px 4px;
     border: 1px solid #ccc;
     border-radius: 2px;
+    font-size: 0.95rem;
 }
 
 /* Vouchercode */
@@ -231,26 +272,18 @@ body {
     margin-right: 8px;
     margin-top: 8px;
     font-size: 0.95rem;
+    width: 60%;
+    display: inline-block;
 }
 
-.stap button[type="button"] {
-    background: var(--vesting-color);
-    color: #fff;
-    border: none;
-    padding: 5px 18px;
-    border-radius: 2px;
-    font-family: var(--basic-font);
-    font-size: 0.95rem;
-    cursor: pointer;
-    margin-top: 8px;
-}
+
 
 /* Mini filminfo */
 .mini-filminfo {
-    background: #f8f8f8;
+    background: #fff;
     border-left: 4px solid var(--vesting-color);
     padding: 8px 12px;
-    margin-bottom: 20px;
+    margin: 0 32px 20px 32px;
     font-size: 0.95rem;
     color: #333;
 }
@@ -263,7 +296,7 @@ body {
     margin-bottom: 15px;
 }
 
-.stoelen > div:first-child {
+.stoelen>div:first-child {
     color: var(--vesting-color);
     font-weight: 700;
     margin-bottom: 10px;
@@ -292,55 +325,76 @@ body {
 
 .stoel span {
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
     background: #e57373;
-    border-radius: 4px;
-    border: 1.5px solid #b71c1c;
+    /* VRIJ */
+    border-radius: 6px;
+    border: 2px solid #b71c1c;
     margin: 0;
     vertical-align: middle;
     transition: background 0.2s;
+    box-sizing: border-box;
 }
 
-.stoel input[type="checkbox"]:checked + span {
-    background: #9E2629;
+.stoel input[type="checkbox"]:checked+span {
+    background: #9E2629; /* JOUW SELECTIE */
     border-color: #9E2629;
 }
 
-.stoel.rolstoel span {
-    background: #bdbdbd;
-    border: 1.5px solid #616161;
-    position: relative;
-}
-.stoel.rolstoel span::after {
-    content: "♿";
-    color: #333;
-    font-size: 1rem;
-    position: absolute;
-    left: 2px;
-    top: 0;
+.stoel input[type="checkbox"]:disabled + span,
+.stoel.disabled span {
+    background: #bdbdbd !important; /* BEZET */
+    border-color: #616161 !important;
+    cursor: not-allowed;
 }
 
-/* Stoel legenda */
-.stap > div > button {
-    margin-right: 10px;
-    background: #e57373;
-    color: #fff;
+/* Rolstoelstoel */
+.stoel.rolstoel span {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.stoel.rolstoel span::after {
+    content: "♿";
+    color: #337ab7;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}
+
+/* Legenda buttons */
+.stoel-legenda {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 24px 0 12px 0;
+}
+.stoel-legenda .legend-btn {
     border: none;
-    padding: 5px 18px;
-    border-radius: 2px;
+    border-radius: 5px;
+    padding: 8px 32px;
+    font-size: 1.1rem;
     font-family: var(--basic-font);
-    font-size: 0.95rem;
-    cursor: pointer;
-}
-.stap > div > button:nth-child(2) {
-    background: #bdbdbd;
-    color: #333;
-}
-.stap > div > button:nth-child(3) {
-    background: #9E2629;
+    font-weight: 700;
     color: #fff;
+    cursor: default;
+    min-width: 120px;
+    transition: none;
 }
+.stoel-legenda .vrij {
+    background: #e57373;
+}
+.stoel-legenda .bezet {
+    background: #bdbdbd;
+    color: #444;
+}
+.stoel-legenda .jouw {
+    background: #9E2629;
+}
+
+
 
 /* Bestelling */
 .bestelling {
@@ -352,8 +406,9 @@ body {
 }
 
 /* Gegevens invullen */
-.stap input[type="text"], .stap input[type="email"] {
-    display: block;
+.stap input[type="text"],
+.stap input[type="email"] {
+    display: inline-block;
     width: 48%;
     margin-bottom: 8px;
     padding: 6px 8px;
@@ -362,9 +417,7 @@ body {
     font-size: 0.95rem;
 }
 
-.stap input[type="text"]:nth-child(2) {
-    float: right;
-}
+
 
 /* Betaalwijzen */
 .betaalwijzen {
@@ -384,7 +437,7 @@ body {
 
 /* Afrekenen knop onderaan */
 .afrekenen {
-    width: 100%;
+    width: calc(100% - 64px);
     background: var(--vesting-color);
     color: #fff;
     font-size: 1.2rem;
@@ -392,19 +445,46 @@ body {
     font-weight: 700;
     border: none;
     padding: 18px 0;
-    margin: 0;
+    margin: 24px 32px 0 32px;
     border-radius: 0;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(0,0,0,0.10);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);
     transition: background 0.2s;
+    display: block;
 }
 
 .afrekenen:hover {
     background: #b71c1c;
 }
-/* einde body content */
 
+/* Responsive voor laptop schermen */
+@media (max-width: 1100px) {
+    .backgroundform {
+        max-width: 99vw;
+        padding: 0 0 30px 0;
+    }
+
+    .koptekst,
+    .mini-filminfo,
+    .stap,
+    .afrekenen {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: unset;
+    }
+
+    .afrekenen {
+        width: calc(100% - 4vw);
+    }
+
+    .dropdown-row {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+}
+
+/* ...einde eigen toevoegingen... */
 
 
 /* footer */
@@ -519,8 +599,9 @@ body {
     flex-shrink: 0;
     margin-left: auto;
 }
+
 .footer-bottom {
-    background-color: black ;
+    background-color: black;
     padding: 20px var(--border-radius);
     display: flex;
     justify-content: space-between;
@@ -551,10 +632,13 @@ body {
         max-width: 98vw;
         padding: 18px 2vw 0 2vw;
     }
-    .stap input[type="text"], .stap input[type="email"] {
+
+    .stap input[type="text"],
+    .stap input[type="email"] {
         width: 100%;
     }
-    .stoelen > div:first-child {
+
+    .stoelen>div:first-child {
         width: 90%;
     }
 }

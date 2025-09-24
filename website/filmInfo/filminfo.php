@@ -28,7 +28,24 @@ include '../includes/film_array.php';
 <br><br>
 <div class="filmtitle">
     <h2><?php echo $film['titel'] ?></h2>
+<br> <br> <br> <br>
+
+<div class="filminfo_h2">
+
+    <h1><?php echo $film['titel']; ?></h1>
+    <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" width="300">
+    <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
+    <p><?php echo $film['beschrijving']; ?></p>
+
 </div>
+
+
+<div class="stap">
+    
+    
+    </div><br><br><br><br><br><br>
+    <div class="button">
+        <a href="filmAgenda/filmagenda.php">BEKIJK ALLE FILMS</a>
 <div class="film_container">
     <div class="filmimage">
     <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>">

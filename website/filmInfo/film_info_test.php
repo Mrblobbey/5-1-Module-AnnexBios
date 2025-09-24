@@ -61,9 +61,15 @@ include '../includes/film_array.php';
         <?php
             include '../includes/header.php';
             ?>
-<br><br>
-<div class="filmtitle">
-    <h2><?php echo $film['titel'] ?></h2>
+<br> <br> <br> <br>
+
+<div class="filminfo_h2">
+
+    <h1><?php echo $film['titel']; ?></h1>
+    <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" width="300">
+    <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
+    <p><?php echo $film['beschrijving']; ?></p>
+
 </div>
 <div class="film_container">
     <div class="filmimage">
@@ -84,49 +90,3 @@ include '../includes/footer.php';
 ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <?php
-
-foreach ($films as $index => $film) {
-    echo "<h2>{$film['titel']}</h2>";
-    echo "<a href='details.php?id={$index}'>Bekijk details</a><br><br>";
-}
-
-?> -->
-
-
-
-
-<!-- <?php foreach ($films as $film): ?>
-<div class="film_card">
-        <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>" class="film_afbeelding">
-        <h3><?php echo $film['titel']; ?></h3>
-        <p><?php echo $film['beschrijving']; ?></p>
-        <p>Tijd: <?php echo $film['tijd']; ?></p>
-        <div class="button">
-        <a href="stoelenpagina.php">MEER INFO EN TICKETS</a>
-        </div>
-    </div><br>
-<?php endforeach; ?> -->

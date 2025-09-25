@@ -1,6 +1,6 @@
 <?php
 
-require '../includes/config.php';
+require './includes/config.php';
 
 //  hier start hij de api aanvraag 
 $ch = curl_init($gluApiUrl . "/api/movies");

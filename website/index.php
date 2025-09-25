@@ -147,23 +147,40 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
         ?>
 
 
-        <div class="film_container">
+    <section class="film_container">
             <?php foreach ($filtered as $film): ?>
                 <div class="film_card">
                     <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>"
                         alt="<?php echo $film['movie']['title']; ?>" class="film_afbeelding">
-                    <h3><?php echo $film['movie']['title']; ?></h3>
-                    <p><?php echo $film['movie']['overview']; ?></p>
-                    <p>Tijd: <?php echo $film['start_time']; ?></p>
-                    <p>Rating: <?php echo $film['movie']['vote_average']; ?></p>
-                    <div class="button">
-                        <a href="stoelpagina/stoelpagina.php?id=<?php echo $film['id'] ?>">MEER INFO EN TICKETS</a>
+
+                    <div class="film_details">
+                        <h3><?php echo $film['movie']['title']; ?></h3>
+
+                        <div class="film_rating" >
+                                    <?php
+                                    $rating = (float) explode('/', $film['movie']['vote_average'])[0];
+                                    $stars = round($rating / 2); // Convert to 1-5 scale
+                                
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= $stars) {
+                                            echo '★';
+                                        } else {
+                                            echo '☆';
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                        
+                                <p class=" release_date">Release: <?php echo $film['movie']['release_date']; ?></p>
+                            <p class="film_description"><?php echo $film['movie']['overview']; ?></p>
+                        </div>
+
+                        <div class="button">
+                            <a href="../stoelpagina/stoelpagina.php?id=<?php echo $film['id'] ?>">MEER INFO &amp; TICKETS</a>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    </section>
+                <?php endforeach; ?>
+        </section>
     </div>
     </main>
     <?php require_once 'includes/footer.php'; ?>

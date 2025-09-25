@@ -316,19 +316,7 @@ font-weight: 700;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
-.filminfo {
-    background-color: rgb(255, 255, 255);
-    max-width: 37.5%;
-    text-align:left;
-    color: rgb(0, 0, 0);
-    /* font-family: var(--basic-font); */
-    font-size: 1rem;
-    /* margin-top: 30px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
+
 
 .sterren {
     color: gold;
@@ -349,7 +337,6 @@ font-weight: 700;
 
 .beschrijving {
     background-color: rgb(255, 255, 255);
-    min-width: 60%;
     padding-left: 20px;
     text-align:left;
     color: rgb(0, 0, 0);
@@ -417,12 +404,68 @@ font-weight: 700;
 }
 
 .stars{
-    background-color: rgb(255, 255, 255);
     max-width: 37.5%;
     text-align:left;
+    color: var(--vesting-color);
+    font-size: 3rem;
+    border-width: 1px;
+
 }
 
 .icons{
     font-size: 1.5rem;
     margin-right: 10px;
+}
+
+.cast-container {
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 150px;
+    margin-right: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cast-container img {
+    height: 100%;
+    width: 75%;
+    margin-right: 20px;
+    max-width: 50%;
+
+}
+
+.film-info-text {
+    color: #666666;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+@media (max-width: 1168px) {
+    .film_container {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .beschrijving {
+        min-width: 90%;
+        padding: 10px;
+    }
+ 
+    .filmimage {
+        width: 100%;
+        height: auto;
+    }
+ 
+    .dettail_pagina_container {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .cast-container img{
+        flex-direction: column;
+        height: auto;
+    }
 }

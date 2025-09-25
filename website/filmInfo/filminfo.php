@@ -36,20 +36,26 @@ include '../includes/film_array.php';
 
         <img class="filmimage" src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>">
     <div class="beschrijving">
-        
-        <div class="stars">
 
-            <?php for ($i = 1; $i <= 5; $i++): ?>
-                <span class="star" <?php echo ($i <= $film['rating']) ? 'filled' : ''; ?>">&#9733;</span>
-            <?php endfor; ?>
-       
-        </div>
+        <div class="stars">
+                <?php
+                $rating = (float)explode('/', $film['rating'])[0];
+                $stars = round($rating / 2); // Convert to 1-5 scale
+                            
+                for ($i = 1; $i <= 5; $i++) {
+                    if ($i <= $stars) {
+                       echo '★';
+                   } else {
+                       echo '☆';
+                    }
+                    }
+                    ?>
+                </div>
+ 
 
         <div class="icons">
 
-            <?php for ($i = 1; $i <= $film['rating']; $i++): ?>
-                <span class="icon"><?php echo $film['icon']; ?></span>
-            <?php endfor; ?>
+
 
         </div>
 
@@ -61,18 +67,34 @@ include '../includes/film_array.php';
 
         <div class="filminfo">
 
-            <h3><strong>Genre:</strong> <?php echo $film['genre']; ?></h3>
-            <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
-            <p><strong>Filmlengte:</strong> <?php echo $film['filmlengte']; ?></p>
-            <p><strong>Land:</strong> <?php echo $film['land']; ?></p>
-            <p><strong>LMDB Score:</strong> <?php echo $film['lmdb score']; ?></p>
-            <p><strong>Regisseur:</strong> <?php echo $film['regisseur']; ?></p>
-            <p><strong>Acteurs:</strong> <?php echo $film['acteurs']; ?></p>
- 
+            <h3 class="film-info-text">Genre: <?php echo $film['genre']; ?></h3>
+            <p class="film-info-text">Filmlengte: <?php echo $film['filmlengte']; ?></p>
+            <p class="film-info-text">Land: <?php echo $film['land']; ?></p>
+            <p class="film-info-text">LMDB Score: <?php echo $film['lmdb score']; ?></p>
+            <p class="film-info-text">Regisseur: <?php echo $film['regisseur']; ?></p>
+            <p class="film-info-text">Acteurs: 
+
         </div>
+        
+<div class="cast-image">
 
+    <?php 
+    for ($i = 0; $i < count($film['cast']); $i++) {
+        ?>
+        <img src="<?php echo $film['cast'][$i]; ?>" class="cast-image">
+        <p class="actor-name"><?php echo $film['acteurs'][$i]; ?></p>
+        <?php
+    }
+    ?>
+</div>
+
+        <div class="cast-container">
+            
+            <img src="https://picsum.photos/200/150?random=2" alt="Random image 2">
+            <p>Some text under image 2</p>
+
+        </div>
     </div>
-
 </div>
 
   
@@ -93,26 +115,4 @@ include '../includes/footer.php';
 ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

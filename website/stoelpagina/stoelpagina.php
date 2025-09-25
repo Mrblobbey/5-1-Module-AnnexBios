@@ -80,6 +80,21 @@ $dates = $movieDatesData['data'];
 // hier sluit hij de api aanvraag 
 curl_close($ch2, );
 
+// aanvraag tijden voor films
+$chTimes = curl_init($gluApiUrl . "/api/movie/{$movie_id}/{$selectedDate}/times");
+curl_setopt($chTimes, CURLOPT_HTTPHEADER, [
+    "X-API-KEY: " . $gluApikey,
+    "Content-Type: application/json"
+]);
+curl_setopt($chTimes, CURLOPT_RETURNTRANSFER, true);
+$responseTimes = curl_exec($chTimes);
+curl_close($chTimes);
+
+$timesData = json_decode($responseTimes, true);
+
+if ($timesData['status'] === 'success') {
+    $times = $timesData['data']; // array van tijden voor die datum
+}
 
 
 
@@ -257,10 +272,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php echo htmlspecialchars($date['date']); ?>
                     </option>
                 <?php endforeach; ?>
-                
+            </select>
+            <select name="times" id="movieTimes">
+                <option value="">Kies een tijd</option>
             </select>
         </div>
-        
+
 
 
         <div class="backgroundform">

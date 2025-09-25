@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--basic-font);
 }
 
 /* ===== VARIABLES ===== */
 :root {
     --vesting-color: #9E2629;
     --footer-color: #666666;
-    --basic-font: 'Lato', sans-serif;
+    --basic-font: 'Lato';
     --border-radius: 80px;
     --transition: 0.2s ease;
 }
@@ -44,7 +45,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    padding: 20px 0;
 }
 .logo {
     display: flex;
@@ -247,6 +248,10 @@ body {
     font-size: 0.9rem;
     margin-left: 15px;
 }
+.filters option {
+ background-color: var(--vesting-color);
+ color: black;   
+}
 
 /* ==== FILTER ICON (alleen icoon, geen tekst) ==== */
 .filter-icon {
@@ -280,6 +285,7 @@ body {
     height: 100%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
+    color: #666666;
 }
 .film_afbeelding {
     width: 100%;
@@ -287,16 +293,44 @@ body {
     object-fit: cover;       
 }
 .film_card h3 {
-    font-size: 1.1rem;
-    margin: 10px 15px 5px;
-    color: #222;
+  margin: 10px 15px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  min-height: 2.5em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+.film_rating {
+    display: flex;              /* zet sterren netjes naast elkaar */
+    align-items: center;
+    margin: 0 15px 10px;        /* zelfde marge als de titel */
+    color: var(--vesting-color);
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
-.film_card p {
-    font-size: 0.9rem;
-    color: #444;
+.film_details p {
     margin: 0 15px 10px;
     flex-grow: 1;
+}
+.film_description {
+  font-size: 0.8rem;
+  margin: 0 15px 15px;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  min-height: 6em;
+  line-height: 1.4;
+}
+
+.release_date {
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+  color: #888;
 }
 
 .button {
@@ -305,11 +339,14 @@ body {
 }
 
 .button a {
-    display: block;
-    padding: 12px 20px; 
-    margin: 0 10px 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px; 
+    margin-bottom: 20px; 
     color: white;
     font-weight: bold;
+    font-size: 0.8em;
     text-decoration: none;
     transition: background-color var(--transition);
     background-color: var(--vesting-color);

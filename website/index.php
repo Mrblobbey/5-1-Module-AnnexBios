@@ -176,7 +176,7 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
                         </div>
 
                         <div class="button">
-                            <a href="../stoelpagina/stoelpagina.php?id=<?php echo $film['id'] ?>">MEER INFO &amp; TICKETS</a>
+                            <a href="stoelpagina/stoelpagina.php?id=<?php echo $film['id'] ?>">MEER INFO &amp; TICKETS</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

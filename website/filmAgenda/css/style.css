@@ -148,13 +148,19 @@ body {
 .nav2 select {
     padding: 5px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--vesting-color);
+    box-shadow: inset;
+    background-color: #9E2629;
     color: white;
     width: 180px;
-    box-shadow: none; /* Removed incomplete box-shadow */
 }
 
 /* ===== FILM AGENDA STYLES ===== */
+button {
+    background-color: white;
+    padding: 20px;
+    
+}
 .filmagenda {
     margin: 40px var(--border-radius);
     width: 43%;
@@ -249,7 +255,7 @@ body {
     margin-left: 15px;
 }
 .filters option {
- background-color: var(--vesting-color);
+ background-color: white;
  color: black;   
 }
 

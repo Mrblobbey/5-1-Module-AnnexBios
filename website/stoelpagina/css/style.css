@@ -109,9 +109,12 @@
 .nav2 {
     background-color: var(--vesting-color);
     width: 100%;
-    padding: 32px 0;   /* verhoogd van 20px naar 32px */
-    border-bottom: none; /* voeg toe om wit randje te voorkomen */
-    margin-bottom: 0;    /* voeg toe om wit randje te voorkomen */
+    padding: 32px 0;
+    /* verhoogd van 20px naar 32px */
+    border-bottom: none;
+    /* voeg toe om wit randje te voorkomen */
+    margin-bottom: 0;
+    /* voeg toe om wit randje te voorkomen */
 }
 
 .nav2 form {
@@ -250,6 +253,13 @@ body {
     background: transparent;
 }
 
+.stap img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
 .stap th,
 .stap td {
     padding: 6px 8px;
@@ -293,7 +303,8 @@ body {
 
 /* Overzicht blok (Stap 3) */
 .bestelling-overzicht {
-    border: 2px solid #9E2629;   /* rode rand */
+    border: 2px solid #9E2629;
+    /* rode rand */
     padding: 16px;
     margin: 20px 32px;
     display: flex;
@@ -302,10 +313,11 @@ body {
     background: #fff;
 }
 
-.bestelling-overzicht img {
+.bestelling-poster img {
     width: 160px;
     border-radius: 4px;
     flex-shrink: 0;
+    height: auto;
 }
 
 .bestelling-info {
@@ -476,6 +488,7 @@ button[name="voucher_toevoegen"] {
     transition: background 0.2s;
     margin-left: 8px;
 }
+
 button[name="voucher_toevoegen"]:hover {
     background-color: #7d2020;
 }
@@ -716,5 +729,59 @@ button[name="voucher_toevoegen"]:hover {
 
     .stoelen>div:first-child {
         width: 90%;
+    }
+}
+
+/* Container voor form + mini-sideposter */
+.ticket-container {
+    display: flex;
+    gap: 20px;
+    /* ruimte tussen form en poster */
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    align-items: flex-start;
+}
+
+/* backgroundform neemt grootste deel */
+.backgroundform {
+    flex: 1;
+    min-width: 600px;
+    /* voorkom dat hij te smal wordt */
+    margin: 0;
+    /* container regelt spacing */
+}
+
+/* mini-sideposter */
+.Mini-sideposter {
+    width: 250px;
+    /* vaste breedte poster */
+    flex-shrink: 0;
+    /* voorkom dat hij krimpt */
+    background: #fff;
+    padding: 16px;
+    border: 2px solid #9E2629;
+    box-sizing: border-box;
+}
+
+.Mini-sideposter img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Responsive: onder elkaar op kleinere schermen */
+@media (max-width: 1100px) {
+    .ticket-container {
+        flex-direction: column;
+    }
+
+    .Mini-sideposter {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .backgroundform {
+        min-width: unset;
     }
 }

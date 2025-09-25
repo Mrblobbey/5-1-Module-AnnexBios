@@ -1,6 +1,7 @@
 <?php
 
-require './includes/config.php';
+$mainPath = isset($mainPath) ? $mainPath : '../';
+require $mainPath . 'includes/config.php';
 
 //  hier start hij de api aanvraag 
 $ch = curl_init($gluApiUrl . "/api/movies");

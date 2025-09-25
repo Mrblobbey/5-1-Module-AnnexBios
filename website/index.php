@@ -1,5 +1,5 @@
 <?php
-
+$mainPath = './';
 
 // standaardwaarden voor filters zodat ze werken en ingeladen worden 
 $when = $_GET['when'] ?? 'all';   // all|week|today

@@ -60,14 +60,14 @@ include '../includes/film_array.php';
         </div>
 
         <div class="release-date">
-            <p><strong>Release Date:</strong> <?php echo $film['release-date']; ?></p>
+            <h2><strong>Release Date:</strong> <?php echo $film['release-date']; ?></h2>
         </div>
 
         <p><?php echo $film['beschrijving']; ?></p>
 
         <div class="filminfo">
 
-            <h3 class="film-info-text">Genre: <?php echo $film['genre']; ?></h3>
+            <p class="film-info-text">Genre: <?php echo $film['genre']; ?></p>
             <p class="film-info-text">Filmlengte: <?php echo $film['filmlengte']; ?></p>
             <p class="film-info-text">Land: <?php echo $film['land']; ?></p>
             <p class="film-info-text">LMDB Score: <?php echo $film['lmdb score']; ?></p>
@@ -76,24 +76,21 @@ include '../includes/film_array.php';
 
         </div>
         
-<div class="cast-image">
+<div class="cast-container">
 
     <?php 
     for ($i = 0; $i < count($film['cast']); $i++) {
         ?>
-        <img src="<?php echo $film['cast'][$i]; ?>" class="cast-image">
-        <p class="actor-name"><?php echo $film['acteurs'][$i]; ?></p>
+        <div class="column">
+        <img src="<?php echo $film['cast'][$i]; ?>">
+        <p><?php echo $film['acteurs'][$i]; ?></p>
+        </div>
         <?php
     }
     ?>
 </div>
 
-        <div class="cast-container">
-            
-            <img src="https://picsum.photos/200/150?random=2" alt="Random image 2">
-            <p>Some text under image 2</p>
-
-        </div>
+        
     </div>
 </div>
 

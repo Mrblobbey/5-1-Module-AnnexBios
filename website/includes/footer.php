@@ -12,7 +12,7 @@
                     penatibus et magnis dis parturient montes,<br>
                     nascetur ridiculus mus. Donec quam felis.
                 </p>
-                    <a href="over-ons.php" class="footer-button">LEES MEER</a>
+                    <a href="<?php echo $mainPath ?>index.php" class="footer-button">LEES MEER</a>
             </div>
 
             <div class="footer-nav">

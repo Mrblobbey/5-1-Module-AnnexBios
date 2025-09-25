@@ -1,5 +1,5 @@
 <?php
-
+// zorgt er voor dat de path linkjes blijven werken dynamis zijn 
 $mainPath = isset($mainPath) ? $mainPath : '../';
 require $mainPath . 'includes/config.php';
 
@@ -37,39 +37,36 @@ curl_close($ch);
 
 <div class="header-container">
     <div class="header" role="banner">
-        <a href="index.php" class="logo" aria-label="AnnexBios Home">
+        <a href="<?php echo $mainPath ?>index.php" class="logo" aria-label="AnnexBios Home">
             <img id="popcorn-img" src="Photos/popcorn.svg" alt="" aria-hidden="true">
             <div class="logo-content">
                 <h1>AnnexBios | Maarssen</h1>
             </div>
             <img id="filmroll-img" src="Photos/filmroll_logo.svg" alt="" aria-hidden="true">
         </a>
-        
         <nav class="main-nav" aria-label="Hoofdnavigatie">
             <ul>
-                <li><a href="filmagenda.php">Film agenda</a></li>
-                <li><a href="allevestingen.php">Alle vestigingen</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="<?php echo $mainPath ?>filmagenda/filmagenda.php">Film agenda</a></li>
+                <li><a href="https://u240066.gluwebsite.nl">Alle vestigingen</a></li>
+                <li><a href="<?php echo $mainPath ?>index.php#contact-info">Contact</a></li>
             </ul>
         </nav>
     </div>    
 <div class="nav2">
-    <!-- Formulier om tickets te kopen -->
-    <form action="action_page.php" method="get">
-        <label for="browser">Koop je tickets</label>
+ <!-- dit is de kies films tickts dropdown die verbonden is met knop -->
+<form action="<?php echo $mainPath ?>stoelpagina/stoelpagina.php" method="get">
+  <label for="browser">Koop je tickets</label>
 
-        <select name="film_id" id="browser">
-            <option value="" selected disabled>Kies je film</option>
+  <!-- noem de naam 'id', want stoelpagina.php leest $_GET['id'] -->
+  <select name="id" id="browser" required>
+    <option value="" selected disabled>Kies je film</option>
+    <?php foreach ($films as $film_item): ?>
+      <option value="<?= htmlspecialchars($film_item['id'], ENT_QUOTES) ?>">
+        <?= htmlspecialchars($film_item['movie']['title']) ?>
+      </option>
+    <?php endforeach; ?>
+  </select>
 
-            <?php
-            // We lopen door dezelfde $films array als op index.php
-            foreach ($films as $film_item): ?>
-                <option value="<?php echo $film_item['id']; ?>">
-                    <?php echo htmlspecialchars($film_item['movie']['title']); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-
-        <button class="big-white-button" type="submit">Bestel tickets</button>
-    </form>
+  <button class="big-white-button" type="submit">Bestel tickets</button>
+</form>
 </div>

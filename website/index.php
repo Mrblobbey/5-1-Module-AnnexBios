@@ -30,7 +30,7 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
                 <div class="inhoud-container">
                     <h1>WELKOM BIJ ANNEXBIOS</h1>
                     <p class="welcome-text">Geniet van de nieuwste films in onze gezellige bioscoop</p>
-                    <a href="films.php">BEKIJK DE DRAAIENDE FILMS</a>
+                    <a href="<?php echo $mainPath ?>filmagenda/filmagenda.php">BEKIJK DE DRAAIENDE FILMS</a>
                 </div>
             </section>
         </main>
@@ -45,12 +45,13 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
                             referrerpolicy="no-referrer-when-downgrade" title="AnnexBios Location">
                         </iframe>
                     </div>
-                    <div class="contact-info">
+                    <div id="contact-info" class="contact-info">
                         <h2>Bezoek Ons</h2>
                         <address class="address-info">
                             <p class="address-line">Rijksstraatweg 42</p>
                             <p class="address-line">3223 KA Hellevoetsluis</p>
                             <p class="phone"><a href="tel:02012345678">020-12345678</a></p>
+                            <p class="mail-address-line">support@AnnexBios.nl</p>
                         </address>
 
                         <div class="accessibility">

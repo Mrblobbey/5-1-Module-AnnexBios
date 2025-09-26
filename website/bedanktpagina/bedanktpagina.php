@@ -12,15 +12,13 @@
 
 <body>
 
-    <div class="background"></div>
         <?php
         require_once '../includes/header.php';?>
  
 
-
-
-
-
-
+    <div class="bedankt">
+        <h2>Bedankt voor uw reservering!</h2>
+        <h3>We hopen dat u een fijne tijd zult hebben bij AnnexBios!</h3>
+    </div>
 
     <?php require_once '../includes/footer.php'; ?>

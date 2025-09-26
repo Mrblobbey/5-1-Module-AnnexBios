@@ -10,8 +10,6 @@ include '../includes/film_array.php';
             die("Film niet gevonden!");
         }
             ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

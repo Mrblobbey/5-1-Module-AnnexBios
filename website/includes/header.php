@@ -46,7 +46,7 @@ curl_close($ch);
         </a>
         <nav class="main-nav" aria-label="Hoofdnavigatie">
             <ul>
-                <li><a href="<?php echo $mainPath ?>filmagenda/filmagenda.php">Film agenda</a></li>
+                <li><a href="<?php echo $mainPath ?>filmAgenda/filmagenda.php">Film agenda</a></li>
                 <li><a href="https://u240066.gluwebsite.nl">Alle vestigingen</a></li>
                 <li><a href="<?php echo $mainPath ?>index.php#contact-info">Contact</a></li>
             </ul>

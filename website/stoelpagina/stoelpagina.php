@@ -226,13 +226,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $t = $conn->prepare("
                     INSERT INTO tickets (order_id, row_number, seat_number, price, status, auditorium_number, movie_screening_id)
-                    VALUES (:od, :row, :num, :pr, 'valid',1,1 )
+                    VALUES (:od, :row, :num, :pr, 'valid', 1, :msi )
                 ");
                 $t->execute([
                     ':od' => $order_id,
                     ':row' => $rowLabel,
                     ':num' => $seatNumber,
-                    ':pr' => $prijs
+                    ':pr' => $prijs,
+                    ':msi' => $movie_screening_id
                 ]);
             }
 
@@ -290,7 +291,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p style="color:green; margin-left:32px;"><?php echo htmlspecialchars($success); ?></p>
             <?php endif; ?>
 
-            <form method="post">
+            <form method="post" action="stoelpagina.php?id=<?php echo $movie_screening_id ?>">
                 <div class="stap">
                     <h2>STAP 1: KIES JE TICKET</h2>
                     <table>

@@ -80,22 +80,44 @@ $dates = $movieDatesData['data'];
 // hier sluit hij de api aanvraag 
 curl_close($ch2, );
 
+
+
+$date = $dates[0]['date'];
+
 // aanvraag tijden voor films
-$chTimes = curl_init($gluApiUrl . "/api/movie/{$movie_id}/{$selectedDate}/times");
-curl_setopt($chTimes, CURLOPT_HTTPHEADER, [
+$ch3 = curl_init($gluApiUrl . "/api/movie/{$movie_id}/{$date}/times");
+
+// hier zet hij de api key in de http headers
+curl_setopt($ch3, CURLOPT_HTTPHEADER, [
     "X-API-KEY: " . $gluApikey,
     "Content-Type: application/json"
 ]);
-curl_setopt($chTimes, CURLOPT_RETURNTRANSFER, true);
-$responseTimes = curl_exec($chTimes);
-curl_close($chTimes);
+curl_setopt($ch3, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch3, CURLOPT_FOLLOWLOCATION, true);
 
-$timesData = json_decode($responseTimes, true);
+// hier kijk of de api goed aangevraagd is
+$response3 = curl_exec($ch3);
 
-if ($timesData['status'] === 'success') {
-    $times = $timesData['data']; // array van tijden voor die datum
+// hier checkt hij of er een error is anders stopt hij de code
+if (curl_errno($ch3)) {
+    exit("Er is een fout opgetreden met de api.");
 }
+// hier maakt hij de terugkoppeling van de aanvraag in jason
+$movieTimesData = json_decode($response3, true);
 
+// hier checkt hij de database error en stopt de code bij error
+if ($movieTimesData['status'] !== 'success') {
+    exit("Er is een fout opgetreden met de api.");
+}
+// // hier pakt hij de film data als alles goed is
+$times = $movieTimesData['data'];
+
+echo '<pre>';
+print_r($times);
+echo '</pre>';
+
+// hier sluit hij de api aanvraag 
+curl_close($ch3, );
 
 
 /* =====================================================
@@ -272,9 +294,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php echo htmlspecialchars($date['date']); ?>
                     </option>
                 <?php endforeach; ?>
-            </select>
+            </select>            
+
+
+            
             <select name="times" id="movieTimes">
-                <option value="">Kies een tijd</option>
+                 <?php foreach ($times as $time): ?>
+                    <option value="<?php echo htmlspecialchars($time['time']); ?>">
+                        <?php echo htmlspecialchars($time['time']); ?>
+                    </option>
+                <?php endforeach; ?>
             </select>
         </div>
 
@@ -414,7 +443,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="Mini-sideposter">
             <img src="https://image.tmdb.org/t/p/w500<?php echo $film['movie']['poster_path']; ?>" alt="Poster">
             <p><?php echo $film['movie']['title']; ?></p>
-            //rating//
+            <div class="film_rating">
+                <?php
+                $rating = (float) explode('/', $film['movie']['vote_average'])[0];
+                $stars = round($rating / 2); // Convert to 1-5 scale
+                
+                for ($i = 1; $i <= 5; $i++) {
+                    if ($i <= $stars) {
+                        echo '★';
+                    } else {
+                        echo '☆';
+                    }
+                }
+                ?>
+            </div>
             <p><?php echo $film['movie']['release_date']; ?></p>
             <p><?php echo $film['movie']['overview']; ?></p>
         </div>

@@ -25,13 +25,45 @@
     padding-bottom: 20px;
 }
 
-.header,
 .nav2 {
-    height: 0%;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: var(--vesting-color);
     width: 100%;
-    box-sizing: border-box;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.nav2 form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.nav2 button {
+    background-color: white;
+    color: var(--vesting-color);
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--basic-font);
+}
+
+.nav2 label {
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav2 select {
+    padding: 5px;
+    border: none;
+    background-color: var(--vesting-color);
+    box-shadow: inset;
+    background-color: #9E2629;
+    color: white;
+    width: 180px;
 }
 
 
@@ -106,50 +138,7 @@
     padding-right: 80px;
 }
 
-.nav2 {
-    background-color: var(--vesting-color);
-    width: 100%;
-    padding: 32px 0;
-    /* verhoogd van 20px naar 32px */
-    border-bottom: none;
-    /* voeg toe om wit randje te voorkomen */
-    margin-bottom: 0;
-    /* voeg toe om wit randje te voorkomen */
-}
 
-.nav2 form {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    padding-left: 80px;
-}
-
-.nav2 button {
-    background-color: white;
-    color: var(--vesting-color);
-    border: none;
-    padding: 5px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: var(--basic-font);
-}
-
-.nav2 label {
-    font-family: 'lato', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-}
-
-.nav2 select {
-    padding: 5px;
-    border: none;
-    background-color: var(--vesting-color);
-    box-shadow: inset;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    width: 180px;
-}
 
 /* einde header */
 
@@ -576,66 +565,68 @@ button[name="voucher_toevoegen"]:hover {
 /* ...einde eigen toevoegingen... */
 
 
-/* footer */
 .main-footer {
-    background-color: var(--footer-color);
-    color: white;
-    font-family: var(--basic-font);
-    margin-top: 50px;
+    background-color: #666;
+    /* grijze achtergrond */
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    padding-top: 40px;
 }
 
+/* ===== Grid ===== */
 .footer-container {
-    padding: 40px 0px 40px var(--border-radius);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    flex-wrap: wrap;
 }
 
+/* ===== About Section ===== */
 .footer-about {
-    flex: 1;
-    min-width: 250px;
+    max-width: 400px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
 }
 
 .footer-about p {
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .footer-button {
     display: inline-block;
-    background-color: white;
-    color: var(--footer-color);
+    background: #fff;
+    color: #444;
     text-decoration: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: var(--basic-font);
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 18px;
+    transition: background 0.3s ease;
 }
 
 .footer-button:hover {
-    opacity: 0.8;
+    background: #ddd;
 }
 
-.footer-nav {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-social h3 {
-    color: white;
-    margin-bottom: 15px;
+/* ===== Navigatie ===== */
+.footer-nav h3 {
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .footer-nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
@@ -644,76 +635,73 @@ button[name="voucher_toevoegen"]:hover {
 }
 
 .footer-nav a {
-    color: white;
     text-decoration: none;
-    transition: opacity 0.3s;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .footer-nav a:hover {
-    opacity: 0.7;
+    color: #ddd;
 }
 
-.footer-social {
-    flex: 1;
-    min-width: 150px;
+/* ===== Socials ===== */
+.footer-social h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
+.footer-social .social-text {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #ddd;
 }
 
 .social-links a {
-    color: white;
-    font-size: 24px;
-    transition: opacity 0.3s;
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    opacity: 0.7;
+    color: #ddd;
 }
 
+/* ===== Filmrol decoratie ===== */
 .footer-decoration {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
 }
 
-.footer-decoration img {
-    width: 200px;
-    height: auto;
-    opacity: 0.8;
-    flex-shrink: 0;
-    margin-left: auto;
+.film-roll-decoration {
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
 }
 
+/* ===== Footer Bottom ===== */
 .footer-bottom {
-    background-color: black;
-    padding: 20px var(--border-radius);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-links {
-    display: flex;
-    gap: 20px;
+    background: #000;
+    text-align: left;
+    padding: 12px 0;
+    margin-top: 40px;
 }
 
 .footer-links a {
-    color: white;
+    color: #fff;
+    font-size: 13px;
+    margin: 0 10px;
     text-decoration: none;
 }
 
-/* einde footer */
+.footer-links a:hover {
+    text-decoration: underline;
+}
 
 /* Responsive voor laptop schermen */
 @media (max-width: 1100px) {
@@ -763,6 +751,18 @@ button[name="voucher_toevoegen"]:hover {
     box-sizing: border-box;
 }
 
+.film_rating {
+    display: flex;
+    /* zet sterren netjes naast elkaar */
+    align-items: center;
+    margin: 0 15px 10px;
+    /* zelfde marge als de titel */
+    color: var(--vesting-color);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+
 .Mini-sideposter img {
     width: 100%;
     height: auto;
@@ -784,4 +784,37 @@ button[name="voucher_toevoegen"]:hover {
     .backgroundform {
         min-width: unset;
     }
+}
+
+/* Container van de selecties */
+.top-bar-selects {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Stijl voor elk selectblok */
+.top-bar-selects select,
+.top-bar-selects button,
+.top-bar-selects p {
+  background-color: #ffffff;
+  border: 1px solid #a31e22; /* rood zoals in header */
+  color: #a31e22;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.top-bar-selects select:hover,
+.top-bar-selects button:hover {
+  background-color: #a31e22;
+  color: #ffffff;
+}
+
+/* Zorg dat de tekst in uppercase blijft zoals in jouw site */
+.top-bar-selects select,
+.top-bar-selects button {
+  text-transform: uppercase;
 }

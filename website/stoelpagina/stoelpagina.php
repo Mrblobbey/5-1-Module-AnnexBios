@@ -80,10 +80,11 @@ $dates = $movieDatesData['data'];
 // hier sluit hij de api aanvraag 
 curl_close($ch2, );
 
-
-
-$date = $dates[0]['date'];
-
+if (isset($_GET['date'])) {
+    $date = $_GET['date'];
+} else {
+    $date = $dates[0]['date'];
+}
 // aanvraag tijden voor films
 $ch3 = curl_init($gluApiUrl . "/api/movie/{$movie_id}/{$date}/times");
 
@@ -112,9 +113,9 @@ if ($movieTimesData['status'] !== 'success') {
 // // hier pakt hij de film data als alles goed is
 $times = $movieTimesData['data'];
 
-echo '<pre>';
-print_r($times);
-echo '</pre>';
+// echo '<pre>';
+// print_r($times);
+// echo '</pre>';
 
 // hier sluit hij de api aanvraag 
 curl_close($ch3, );
@@ -248,13 +249,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $t = $conn->prepare("
                     INSERT INTO tickets (order_id, row_number, seat_number, price, status, auditorium_number, movie_screening_id)
-                    VALUES (:od, :row, :num, :pr, 'valid',1,1 )
+                    VALUES (:od, :row, :num, :pr, 'valid', 1, :msi )
                 ");
                 $t->execute([
                     ':od' => $order_id,
                     ':row' => $rowLabel,
                     ':num' => $seatNumber,
-                    ':pr' => $prijs
+                    ':pr' => $prijs,
+                    ':msi' => $movie_screening_id
                 ]);
             }
 
@@ -279,6 +281,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>annexbios</title>
+    <script defer src="./js/tijd.js"></script>
 </head>
 
 <?php include '../includes/header.php'; ?>
@@ -286,20 +289,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="ticket-container">
 
-        <div class="top-bars">
+        <div class="top-bar-selects">
             <p><?php echo htmlspecialchars($film['movie']['title']); ?></p>
             <select name="dates" id="movieDates">
-                <?php foreach ($dates as $date): ?>
-                    <option value="<?php echo htmlspecialchars($date['date']); ?>">
-                        <?php echo htmlspecialchars($date['date']); ?>
-                    </option>
+                <?php foreach ($dates as $dat): ?>
+
+                    <?php echo "<option value='" . htmlspecialchars($dat['date']) . "' " . ($dat['date'] === $date ? 'selected' : '') . ">" . htmlspecialchars($dat['date']) . "</option>"; ?>
                 <?php endforeach; ?>
-            </select>            
+            </select>
 
 
-            
+
             <select name="times" id="movieTimes">
-                 <?php foreach ($times as $time): ?>
+                <?php foreach ($times as $time): ?>
                     <option value="<?php echo htmlspecialchars($time['time']); ?>">
                         <?php echo htmlspecialchars($time['time']); ?>
                     </option>
@@ -319,7 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p style="color:green; margin-left:32px;"><?php echo htmlspecialchars($success); ?></p>
             <?php endif; ?>
 
-            <form method="post">
+            <form method="post" action="stoelpagina.php?id=<?php echo $movie_screening_id ?>">
                 <div class="stap">
                     <h2>STAP 1: KIES JE TICKET</h2>
                     <table>
@@ -390,11 +392,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="bestelling-info">
                             <h3><?php echo $film['movie']['title']; ?></h3>
 
-                            <div class="bestelling-icons">
-                                <!-- hier komen jouw icoontjes dynamisch -->
-                                <img src="icons/12.png" alt="Leeftijd 12+">
-                                <img src="icons/action.png" alt="Actie">
-                                <img src="icons/adventure.png" alt="Avontuur">
+                            <div class="kijkwijzer-container">
+                                <?php for ($x = 0; $x < count($film["movie"]["warnings"]); $x++) {
+                                    ?>
+                                    <img src="<?php echo $film["movie"]["warnings"][$x]['icon'] ?>"></img>
+                                    <?php
+                                } ?>
                             </div>
 
                             <p>Bioscoop: Hellevoetsluit (Zaal <?php echo $film['cinema']['auditorium_number']; ?>)</p>

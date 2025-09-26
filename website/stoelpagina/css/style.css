@@ -785,3 +785,36 @@ button[name="voucher_toevoegen"]:hover {
         min-width: unset;
     }
 }
+
+/* Container van de selecties */
+.top-bar-selects {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Stijl voor elk selectblok */
+.top-bar-selects select,
+.top-bar-selects button,
+.top-bar-selects p {
+  background-color: #ffffff;
+  border: 1px solid #a31e22; /* rood zoals in header */
+  color: #a31e22;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.top-bar-selects select:hover,
+.top-bar-selects button:hover {
+  background-color: #a31e22;
+  color: #ffffff;
+}
+
+/* Zorg dat de tekst in uppercase blijft zoals in jouw site */
+.top-bar-selects select,
+.top-bar-selects button {
+  text-transform: uppercase;
+}

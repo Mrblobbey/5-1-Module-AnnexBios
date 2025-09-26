@@ -426,10 +426,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="stap">
                     <h2>STAP 5: KIES JE BETAALWIJZE</h2>
                     <label><input type="radio" name="betaalwijze" value="ideal" required><img
-                            src="photos/ideal.png"></label><br>
+                            src="Photos/ideal.png"></label><br>
                     <label><input type="radio" name="betaalwijze" value="meastro"><img
-                            src="photos/maestro.png"></label><br>
-                    <label><input type="radio" name="betaalwijze" value="biosbon"><img src="photos/nbb.png"></label><br>
+                            src="Photos/maestro.png"></label><br>
+                    <label><input type="radio" name="betaalwijze" value="biosbon"><img src="Photos/nbb.png"></label><br>
                 </div>
 
                 <div class="stap">

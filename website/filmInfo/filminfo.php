@@ -1,3 +1,5 @@
+
+
 <?php
 include '../includes/film_array.php';
         
@@ -24,35 +26,85 @@ include '../includes/film_array.php';
 <div class="container">
         <?php
             include '../includes/header.php';
-            ?>
-<br><br>
+        ?>
+<div class="dettail_pagina_container">
 <div class="filmtitle">
     <h2><?php echo $film['titel'] ?></h2>
 </div>
+
 <div class="film_container">
-    <div class="filmimage">
-    <img src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>">
-    </div>
-    <div class="filminfo">
-        <p><?php echo $film['beschrijving']; ?></p>
-        <p><strong>Genre:</strong> <?php echo $film['genre']; ?></p>
-        <p><strong>Tijd:</strong> <?php echo $film['tijd']; ?></p>
-        <p><strong>Filmlengte:</strong> <?php echo $film['filmlengte']; ?></p>
-        <p><strong>Land:</strong> <?php echo $film['land']; ?></p>
-        <p><strong>LMDB Score:</strong> <?php echo $film['lmdb score']; ?></p>
-        <p><strong>Regisseur:</strong> <?php echo $film['regisseur']; ?></p>
-        <p><strong>Acteurs:</strong> <?php echo $film['acteurs']; ?></p>
+
+        <img class="filmimage" src="<?php echo $film['afbeelding']; ?>" alt="<?php echo $film['titel']; ?>">
+    <div class="beschrijving">
+
+        <div class="stars">
+                <?php
+                $rating = (float)explode('/', $film['rating'])[0];
+                $stars = round($rating / 2); // Convert to 1-5 scale
+                            
+                for ($i = 1; $i <= 5; $i++) {
+                    if ($i <= $stars) {
+                       echo '★';
+                   } else {
+                       echo '☆';
+                    }
+                    }
+                    ?>
+                </div>
  
+
+        <div class="icons">
+
+
+
+        </div>
+
+        <div class="release-date">
+            <h2><strong>Release Date:</strong> <?php echo $film['release-date']; ?></h2>
+        </div>
+
+        <p><?php echo $film['beschrijving']; ?></p>
+
+        <div class="filminfo">
+
+            <p class="film-info-text">Genre: <?php echo $film['genre']; ?></p>
+            <p class="film-info-text">Filmlengte: <?php echo $film['filmlengte']; ?></p>
+            <p class="film-info-text">Land: <?php echo $film['land']; ?></p>
+            <p class="film-info-text">LMDB Score: <?php echo $film['lmdb score']; ?></p>
+            <p class="film-info-text">Regisseur: <?php echo $film['regisseur']; ?></p>
+            <p class="film-info-text">Acteurs: 
+
+        </div>
+        
+<div class="cast-container">
+
+    <?php 
+    for ($i = 0; $i < count($film['cast']); $i++) {
+        ?>
+        <div class="column">
+        <img src="<?php echo $film['cast'][$i]; ?>">
+        <p><?php echo $film['acteurs'][$i]; ?></p>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+
+        
     </div>
-    
-    </div>
+</div>
+
+  
+
     <a href="../tickets/tickets.php?id=<?php echo $film['id']; ?>" class="koop_tickets">
         <p>Koop je Tickets</p>
     </a>
+    
 
-    <div class="video">
-        <iframe width="560" height="315" src="<?php echo $film['video']; ?>"></iframe>
+        <iframe class="video" src="<?php echo $film['video']; ?>"></iframe>
+
     </div>
+
 
     
     <?php
@@ -60,26 +112,4 @@ include '../includes/footer.php';
 ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

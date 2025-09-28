@@ -1,4 +1,5 @@
 <?php
+// werkend maken voor de links 
 $mainPath = './';
 
 // standaardwaarden voor filters zodat ze werken en ingeladen worden 
@@ -30,7 +31,7 @@ $category = $_GET['category'] ?? 'all';   // all|new|soon
                 <div class="inhoud-container">
                     <h1>WELKOM BIJ ANNEXBIOS</h1>
                     <p class="welcome-text">Geniet van de nieuwste films in onze gezellige bioscoop</p>
-                    <a href="<?php echo $mainPath ?>filmagenda/filmagenda.php">BEKIJK DE DRAAIENDE FILMS</a>
+                    <a href="<?php echo $mainPath ?>filmAgenda/filmagenda.php">BEKIJK DE DRAAIENDE FILMS</a>
                 </div>
             </section>
         </main>

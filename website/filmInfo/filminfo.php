@@ -95,7 +95,7 @@ curl_close($ch);
 
         </div>
         
-<div class="cast-container">
+<!-- <div class="cast-container">
 
     <?php 
     for ($i = 0; $i < count($movieData['movie']['actors']); $i++) {
@@ -107,8 +107,8 @@ curl_close($ch);
         <?php
     }
     ?>
-</div>
-
+</div> -->
+<br><br><br><br><br><br><br><br><br><br>
         
     </div>
 </div>

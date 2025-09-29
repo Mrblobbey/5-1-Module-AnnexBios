@@ -401,17 +401,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
 
                             <p>Bioscoop: Hellevoetsluit (Zaal <?php echo $film['cinema']['auditorium_number']; ?>)</p>
-                            <p>Wanneer: <?php echo $film['cinema']['start_time']; ?></p>
+                            <p>Datum: <span id="overzicht-datum"><?php echo $date; ?></span></p>
+                            <p>Tijd: <span id="overzicht-tijd"><?php echo $film['cinema']['start_time']; ?></span></p>
 
-                            <?php if ($totaalAantal > 0): ?>
-                                <p>Tickets:
-                                    <?php echo $aantal_normaal . "x normaal, " . $aantal_kind . "x kind, " . $aantal_65 . "x 65+"; ?>
-                                </p>
-                                <p class="bestelling-totaal">Totaal <?php echo $totaalAantal; ?> ticket(s):
-                                    €<?php echo number_format($totaal, 2, ',', '.'); ?></p>
-                            <?php else: ?>
-                                <p>Nog geen kaartjes</p>
-                            <?php endif; ?>
+
+
+                            <p id="tickets-overzicht">Nog geen kaartjes</p>
+                            <p id="totaal-overzicht" class="bestelling-totaal"></p>
                         </div>
                     </div>
                 </div>

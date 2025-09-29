@@ -1,14 +1,14 @@
 <?php
-// Simpele PDO-connector: om de db te verbinden 
-// $DB_HOST = 'localhost';   
-// $DB_NAME = 'annexbiosma_maarssen';
-// $DB_USER = 'annexbiosma_maarssen';       
-// $DB_PASS = 'iFS3cSfVzp'; 
-
+Simpele PDO-connector: om de db te verbinden 
 $DB_HOST = 'localhost';   
-$DB_NAME = 'annexbios_maarssen';
-$DB_USER = 'root';       
-$DB_PASS = ''; 
+$DB_NAME = 'annexbiosma_maarssen';
+$DB_USER = 'annexbiosma_maarssen';       
+$DB_PASS = 'iFS3cSfVzp'; 
+
+// $DB_HOST = 'localhost';   
+// $DB_NAME = 'annexbios_maarssen';
+// $DB_USER = 'root';       
+// $DB_PASS = ''; 
 
 
 try {

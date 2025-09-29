@@ -1,5 +1,5 @@
 <?php
-Simpele PDO-connector: om de db te verbinden 
+// Simpele PDO-connector: om de db te verbinden 
 $DB_HOST = 'localhost';   
 $DB_NAME = 'annexbiosma_maarssen';
 $DB_USER = 'annexbiosma_maarssen';       
